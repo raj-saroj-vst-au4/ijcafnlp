@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            IJCNLP 2025 - International Joint Conference on Natural Language
+            Processing
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#2563eb",
+                            secondary: "#f59e0b",
+                        },
+                        borderRadius: {
+                            none: "0px",
+                            sm: "4px",
+                            DEFAULT: "8px",
+                            md: "12px",
+                            lg: "16px",
+                            xl: "20px",
+                            "2xl": "24px",
+                            "3xl": "32px",
+                            full: "9999px",
+                            button: "8px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            :where([class^="ri-"])::before {
+                content: "\f3c2";
+            }
+            body {
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-white">
+        <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+            <nav
+                class="container mx-auto px-6 h-20 flex items-center justify-between"
+            >
+                <div class="flex items-center gap-2">
+                    <span class="font-['Pacifico'] text-2xl text-primary"
+                        >logo</span
+                    >
+                    <span class="text-lg font-semibold"
+                        >IJCNLP & AACL 2025</span
+                    >
+                </div>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a
+                        href="#home"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Home</a
+                    >
+                    <a
+                        href="#call-for-papers"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Call for Papers</a
+                    >
+                    <a
+                        href="#important-dates"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Important Dates</a
+                    >
+                    <a
+                        href="#organizers"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Organization</a
+                    >
+                    <a
+                        href="#venue"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Venue</a
+                    >
+                    <a
+                        href="#updates"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Updates</a
+                    >
+                    <!-- <button
+            class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+          >
+            Submit Paper
+          </button> -->
+                </div>
+                <button
+                    class="lg:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
+                    id="mobileMenuBtn"
+                >
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </nav>
+        </header>
+        <div
+            class="fixed top-20 left-0 right-0 bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 lg:hidden"
+            id="mobileMenu"
+        >
+            <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+                <a
+                    href="#home"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Home</a
+                >
+                <a
+                    href="#call-for-papers"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Call for Papers</a
+                >
+                <a
+                    href="#important-dates"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Important Dates</a
+                >
+                <a
+                    href="#organizers"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Organization</a
+                >
+                <a
+                    href="#venue"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Venue</a
+                >
+                <a
+                    href="#updates"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Updates</a
+                >
+                <button
+                    class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                >
+                    Submit Paper
+                </button>
+            </div>
+        </div>
+        <main class="pt-20">
+            <section id="organizers" class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12">
+                        Conference Organizers
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                General Chairs
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/a679740c380795d215dad2e86ff5cb8d.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Kentaro Inui"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Kentaro Inui
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                MBZUAI
+                                            </p>
+                                            <a
+                                                href="mailto:kentaro.inui@mbzuai.ac.ae"
+                                                class="text-primary text-sm hover:underline"
+                                                >kentaro.inui@mbzuai.ac.ae</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/13f3b77659c1e2537e66d6412a54eee8.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Jing-Shin Chang"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Jing-Shin Chang
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                National Chi Nan University
+                                            </p>
+                                            <a
+                                                href="mailto:jshin@ncnu.edu.tw"
+                                                class="text-primary text-sm hover:underline"
+                                                >jshin@ncnu.edu.tw</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Program Committee Chairs
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/45893835cbd0c00d9342a4ea23a8e82f.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Sakriani Sakti"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Sakriani Sakti
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                NAIST
+                                            </p>
+                                            <a
+                                                href="mailto:ssakti@is.naist.jp"
+                                                class="text-primary text-sm hover:underline"
+                                                >ssakti@is.naist.jp</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/624894ae76b772a4d1966eb1555e1b02.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Haofen Wang"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Haofen Wang
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Tongji University
+                                            </p>
+                                            <a
+                                                href="mailto:haofen.wang@tongji.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >haofen.wang@tongji.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/ccebde87a91c964d7661c4ee6575ad73.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Derek F. Wong"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Derek F. Wong
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                University of Macau
+                                            </p>
+                                            <a
+                                                href="mailto:derekfw@um.edu.mo"
+                                                class="text-primary text-sm hover:underline"
+                                                >derekfw@um.edu.mo</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Local Organizing Committee
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/22375aae8c1d2ec645433089a3566dee.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Prof. Pushpak Bhattacharya"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Prof. Pushpak Bhattacharya
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                IIT Bombay
+                                            </p>
+                                            <a
+                                                href="mailto:pb@cse.iitb.ac.in"
+                                                class="text-primary text-sm hover:underline"
+                                                >pb@cse.iitb.ac.in</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/69cb5f8e441a61c62e58c633d2f12419.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Asif Ekbal"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Asif Ekbal
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                IIT Jodhpur
+                                            </p>
+                                            <a
+                                                href="mailto:asif.ekbal@gmail.com"
+                                                class="text-primary text-sm hover:underline"
+                                                >asif.ekbal@gmail.com</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Area Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/176b97fd1eb046b29dd79b59eac012d6.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Yulia Tsvetkov"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Yulia Tsvetkov
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                University of Washington
+                                            </p>
+                                            <a
+                                                href="mailto:yuliats@cs.washington.edu"
+                                                class="text-primary text-sm hover:underline"
+                                                >yuliats@cs.washington.edu</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/06efbf3ba01481c12d4bd868087dd2bb.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Wanxiang Che"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Wanxiang Che
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Harbin Institute of Technology
+                                            </p>
+                                            <a
+                                                href="mailto:car@hit.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >car@hit.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/248187b3dfca9e08f3fb062ef4511d1b.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Anders Søgaard"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Anders Søgaard
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                University of Copenhagen
+                                            </p>
+                                            <a
+                                                href="mailto:soegaard@di.ku.dk"
+                                                class="text-primary text-sm hover:underline"
+                                                >soegaard@di.ku.dk</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Workshop Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/9104cf3b56729a2389e685dc47c2e4fc.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Lili Mou"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Lili Mou
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                University of Alberta
+                                            </p>
+                                            <a
+                                                href="mailto:doublepower.mou@gmail.com"
+                                                class="text-primary text-sm hover:underline"
+                                                >doublepower.mou@gmail.com</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/5bdbfa327688d38e3fc517aa59995f49.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Yuki Arase"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Yuki Arase
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Osaka University
+                                            </p>
+                                            <a
+                                                href="mailto:arase@ist.osaka-u.ac.jp"
+                                                class="text-primary text-sm hover:underline"
+                                                >arase@ist.osaka-u.ac.jp</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Publication Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/cbacf0900894acd63961e5f85323402d.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Yao Wan"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Yao Wan
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Huazhong University
+                                            </p>
+                                            <a
+                                                href="mailto:wanyao@hust.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >wanyao@hust.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/c9ba1333112f4be1b2542be5e622ab03.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Yanyan Zhao"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Yanyan Zhao
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Institute of Computing
+                                                Technology, CAS
+                                            </p>
+                                            <a
+                                                href="mailto:zhao@ict.ac.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >zhao@ict.ac.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Best Paper Award Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462411/ijcnlp-aacl/x7tr7wvixhocuddaxkrt.png"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Yufang Hou"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Yufang Hou
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                IT:U Interdisciplinary
+                                                Transformation University
+                                                Austria (Austria)
+                                            </p>
+                                            <a
+                                                href="mailto:yufang.hou@it-u.at"
+                                                class="text-primary text-sm hover:underline"
+                                                >yufang.hou@it-u.at</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462409/ijcnlp-aacl/b0msibffiz2mrdf6sskr.png"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Zhongyu Wei"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Zhongyu Wei
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Fudan University
+                                            </p>
+                                            <a
+                                                href="mailto:zywei@fudan.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >zywei@fudan.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Tutorial Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462410/ijcnlp-aacl/tqxkt6wqo8lmyosjpqf9.png"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Benjamin Heinzerling"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Benjamin Heinzerling
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                RIKEN / Tohoku University
+                                            </p>
+                                            <a
+                                                href="mailto:benjamin.heinzerling@riken.jp"
+                                                class="text-primary text-sm hover:underline"
+                                                >benjamin.heinzerling@riken.jp</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-3">
+                            <h3 class="text-xl font-semibold text-primary mb-6">
+                                Publicity Chairs
+                            </h3>
+                            <div
+                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                            >
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/ca361263ffd7dac5352c05de9712be8c.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Jing Li"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Jing Li
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Zhejiang University
+                                            </p>
+                                            <a
+                                                href="mailto:lijing2019@zju.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >lijing2019@zju.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-start gap-4">
+                                        <img
+                                            src="https://public.readdy.ai/ai/img_res/dbc5c4245fab926feb6d0b7a3ea1e3d2.jpg"
+                                            class="w-16 h-16 rounded-full object-cover"
+                                            alt="Tao Gui"
+                                        />
+                                        <div>
+                                            <h4 class="font-semibold">
+                                                Tao Gui
+                                            </h4>
+                                            <p
+                                                class="text-gray-600 text-sm mb-2"
+                                            >
+                                                Fudan University
+                                            </p>
+                                            <a
+                                                href="mailto:tgui@fudan.edu.cn"
+                                                class="text-primary text-sm hover:underline"
+                                                >tgui@fudan.edu.cn</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-gray-900 text-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <img
+                                src="assets/logos/iitb.png"
+                                alt="Logo"
+                                class="w-8 h-8"
+                            />
+                            <span class="text-lg font-semibold"
+                                >IJCNLP & AACL 2025</span
+                            >
+                        </div>
+                        <p class="text-gray-400">
+                            14th International Joint Conference on Natural
+                            Language Processing & 4th Asia-Pacific Chapter of
+                            the Association for Computational Linguistics
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-mail-line"></i>
+                                <a
+                                    href="mailto:contact@ijcnlp-aacl2025.org"
+                                    class="text-gray-400 hover:text-white transition-colors"
+                                    >contact@ijcnlp-aacl2025.org</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-map-pin-2-line"></i>
+                                <span class="text-gray-400"
+                                    >IIT Bombay, Mumbai, India</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                        <div class="flex gap-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-linkedin-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 pt-12 border-t border-gray-800 text-center text-gray-400"
+                >
+                    <p>&copy; 2025 IJCNLP. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <div
+            class="fixed bottom-4 right-4 transform translate-y-[200%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-300"
+            id="toast"
+        >
+            <p class="text-gray-800"></p>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            let isMenuOpen = false;
+            mobileMenuBtn.addEventListener("click", () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.style.transform = isMenuOpen
+                    ? "translateY(0)"
+                    : "translateY(-100%)";
+                mobileMenuBtn.innerHTML = isMenuOpen
+                    ? '<i class="ri-close-line text-2xl"></i>'
+                    : '<i class="ri-menu-line text-2xl"></i>';
+            });
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    if (isMenuOpen) {
+                        isMenuOpen = false;
+                        mobileMenu.style.transform = "translateY(-100%)";
+                        mobileMenuBtn.innerHTML =
+                            '<i class="ri-menu-line text-2xl"></i>';
+                    }
+                    document
+                        .querySelector(this.getAttribute("href"))
+                        .scrollIntoView({
+                            behavior: "smooth",
+                        });
+                });
+            });
+
+            document.addEventListener("scroll", () => {
+                const header = document.querySelector("header");
+                if (window.scrollY > 0) {
+                    header.classList.add("shadow");
+                } else {
+                    header.classList.remove("shadow");
+                }
+            });
+        </script>
+    </body>
+</html>
