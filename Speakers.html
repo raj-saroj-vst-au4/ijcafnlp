@@ -7,6 +7,7 @@
             IJCNLP 2025 - International Joint Conference on Natural Language
             Processing
         </title>
+
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -32,6 +33,8 @@
                 },
             };
         </script>
+        <link rel="icon" href="assets/logos/aacl.jpg" type="image/x-icon" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -57,52 +60,70 @@
                 class="container mx-auto px-6 h-20 flex items-center justify-between"
             >
                 <div class="flex items-center gap-2">
-                    <span class="font-['Pacifico'] text-2xl text-primary"
-                        >logo</span
-                    >
+                    <!-- replace the logo text with logo image -->
+                    <img
+                        src="assets/logos/iitb.png"
+                        alt="Logo"
+                        class="w-8 h-8"
+                    />
                     <span class="text-lg font-semibold"
                         >IJCNLP & AACL 2025</span
                     >
                 </div>
-                <div class="hidden lg:flex items-center gap-8">
+                <div class="hidden xl:flex items-center gap-6">
                     <a
-                        href="#home"
+                        href="index.html"
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Home</a
                     >
                     <a
-                        href="#call-for-papers"
+                        href="Call_for_papers.html"
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Call for Papers</a
                     >
                     <a
-                        href="#important-dates"
+                        href="Dates.html"
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Important Dates</a
                     >
                     <a
-                        href="#organizers"
+                        href="Organizers.html"
                         class="text-gray-700 hover:text-primary transition-colors"
-                        >Organization</a
+                        >Organizers</a
                     >
                     <a
-                        href="#venue"
+                        href="Venue.html"
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Venue</a
                     >
                     <a
-                        href="#updates"
+                        href="Registrations.html"
                         class="text-gray-700 hover:text-primary transition-colors"
-                        >Updates</a
+                        >Registration</a
+                    >
+                    <a
+                        href="Schedule.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Schedule</a
+                    >
+                    <a
+                        href="Speakers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Speakers</a
+                    >
+                    <a
+                        href="Venue.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Venue</a
                     >
                     <!-- <button
-            class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
-          >
-            Submit Paper
-          </button> -->
+                        class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                    >
+                        Submit Paper
+                    </button> -->
                 </div>
                 <button
-                    class="lg:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
+                    class="xl:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
                     id="mobileMenuBtn"
                 >
                     <i class="ri-menu-line text-2xl"></i>
@@ -110,45 +131,60 @@
             </nav>
         </header>
         <div
-            class="fixed top-20 left-0 right-0 bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 lg:hidden"
+            class="z-40 fixed top-20 left-0 right-0 bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 xl:hidden"
             id="mobileMenu"
         >
             <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
                 <a
-                    href="#home"
+                    href="index.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Home</a
                 >
                 <a
-                    href="#call-for-papers"
+                    href="Call_for_papers.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Call for Papers</a
                 >
                 <a
-                    href="#important-dates"
+                    href="Dates.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Important Dates</a
                 >
                 <a
-                    href="#organizers"
+                    href="Organizers.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
-                    >Organization</a
+                    >Organizers</a
                 >
                 <a
-                    href="#venue"
+                    href="Venue.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Venue</a
                 >
                 <a
-                    href="#updates"
+                    href="Registrations.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
-                    >Updates</a
+                    >Registration</a
                 >
-                <button
+                <a
+                    href="Schedule.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Schedule</a
+                >
+                <a
+                    href="Speakers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Speakers</a
+                >
+                <a
+                    href="Venue.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Venue</a
+                >
+                <!-- <button
                     class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
                 >
                     Submit Paper
-                </button>
+                </button> -->
             </div>
         </div>
         <main class="pt-20">
@@ -311,49 +347,6 @@
                 mobileMenuBtn.innerHTML = isMenuOpen
                     ? '<i class="ri-close-line text-2xl"></i>'
                     : '<i class="ri-menu-line text-2xl"></i>';
-            });
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    if (isMenuOpen) {
-                        isMenuOpen = false;
-                        mobileMenu.style.transform = "translateY(-100%)";
-                        mobileMenuBtn.innerHTML =
-                            '<i class="ri-menu-line text-2xl"></i>';
-                    }
-                    document
-                        .querySelector(this.getAttribute("href"))
-                        .scrollIntoView({
-                            behavior: "smooth",
-                        });
-                });
-            });
-            const newsletterForm = document.getElementById("newsletterForm");
-            const toast = document.getElementById("toast");
-            function showToast(message) {
-                toast.querySelector("p").textContent = message;
-                toast.style.transform = "translateY(0)";
-                setTimeout(() => {
-                    toast.style.transform = "translateY(200%)";
-                }, 3000);
-            }
-            newsletterForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                const email = newsletterForm.querySelector(
-                    'input[type="email"]',
-                ).value;
-                if (email) {
-                    showToast("Thank you for subscribing!");
-                    newsletterForm.reset();
-                }
-            });
-            document.addEventListener("scroll", () => {
-                const header = document.querySelector("header");
-                if (window.scrollY > 0) {
-                    header.classList.add("shadow");
-                } else {
-                    header.classList.remove("shadow");
-                }
             });
         </script>
     </body>
