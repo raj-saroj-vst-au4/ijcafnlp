@@ -1,1872 +1,425 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{project.meta.ogDescription}}">
-    <meta name="theme-color" content="#ffffff">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="robots" content="{{project.meta.robotsMeta}}">
-
-    <title>IJCNLP-AACL</title>
-    <!-- SEO Description -->
-    <meta name="description" content="14th IJCNLP & 4th AACL">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
-
-    <link href="{{fontLink}}" rel="stylesheet">
-    <link href="{{secondaryFontLink}}" rel="stylesheet">
-
-
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-        rel="stylesheet">
-
-
-
-    <!-- Performance optimization: Preload critical resources -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-
-
-
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Font stylesheet -->
-
-    <script type="application/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-
-    <!-- Core CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            IJCNLP 2025 - International Joint Conference on Natural Language
+            Processing
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
-                            primary: {
-                                DEFAULT: '{{settings.colors.primary}}',
-                                50: '#f8f8f8',
-                                100: '#e8e8e8',
-                                200: '#d3d3d3',
-                                300: '#a3a3a3',
-                                400: '#737373',
-                                500: '#525252',
-                                600: '#404040',
-                                700: '#262626',
-                                800: '#171717',
-                                900: '#0a0a0a',
-                                950: '#030303',
-                            },
-                            secondary: {
-                                DEFAULT: '{{settings.colors.secondary}}',
-                                50: '#f8f8f8',
-                                100: '#e8e8e8',
-                                200: '#d3d3d3',
-                                300: '#a3a3a3',
-                                400: '#737373',
-                                500: '#525252',
-                                600: '#404040',
-                                700: '#262626',
-                                800: '#171717',
-                                900: '#0a0a0a',
-                                950: '#030303',
-                            },
-                            accent: {
-                                DEFAULT: '{{settings.colors.accent}}',
-                                50: '#f8f8f8',
-                                100: '#e8e8e8',
-                                200: '#d3d3d3',
-                                300: '#a3a3a3',
-                                400: '#737373',
-                                500: '#525252',
-                                600: '#404040',
-                                700: '#262626',
-                                800: '#171717',
-                                900: '#0a0a0a',
-                                950: '#030303',
-                            },
+                            primary: "#2563eb",
+                            secondary: "#f59e0b",
                         },
-                        fontFamily: {
-                            sans: ['{{settings.fonts.primary}}', 'Roboto', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                            heading: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
-                            body: ['{{settings.fonts.secondary}}', 'system-ui', 'sans-serif'],
-                        },
-                        spacing: {
-                            '18': '4.5rem',
-                            '22': '5.5rem',
-                            '30': '7.5rem',
-                        },
-                        maxWidth: {
-                            '8xl': '88rem',
-                            '9xl': '96rem',
-                        },
-                        animation: {
-                            'fade-in': 'fadeIn 0.5s ease-in',
-                            'fade-out': 'fadeOut 0.5s ease-out',
-                            'slide-up': 'slideUp 0.5s ease-out',
-                            'slide-down': 'slideDown 0.5s ease-out',
-                            'slide-left': 'slideLeft 0.5s ease-out',
-                            'slide-right': 'slideRight 0.5s ease-out',
-                            'scale-in': 'scaleIn 0.5s ease-out',
-                            'scale-out': 'scaleOut 0.5s ease-out',
-                            'spin-slow': 'spin 3s linear infinite',
-                            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                            'bounce-slow': 'bounce 3s infinite',
-                            'float': 'float 3s ease-in-out infinite',
-                        },
-                        keyframes: {
-                            fadeIn: {
-                                '0%': { opacity: '0' },
-                                '100%': { opacity: '1' },
-                            },
-                            fadeOut: {
-                                '0%': { opacity: '1' },
-                                '100%': { opacity: '0' },
-                            },
-                            slideUp: {
-                                '0%': { transform: 'translateY(20px)', opacity: '0' },
-                                '100%': { transform: 'translateY(0)', opacity: '1' },
-                            },
-                            slideDown: {
-                                '0%': { transform: 'translateY(-20px)', opacity: '0' },
-                                '100%': { transform: 'translateY(0)', opacity: '1' },
-                            },
-                            slideLeft: {
-                                '0%': { transform: 'translateX(20px)', opacity: '0' },
-                                '100%': { transform: 'translateX(0)', opacity: '1' },
-                            },
-                            slideRight: {
-                                '0%': { transform: 'translateX(-20px)', opacity: '0' },
-                                '100%': { transform: 'translateX(0)', opacity: '1' },
-                            },
-                            scaleIn: {
-                                '0%': { transform: 'scale(0.9)', opacity: '0' },
-                                '100%': { transform: 'scale(1)', opacity: '1' },
-                            },
-                            scaleOut: {
-                                '0%': { transform: 'scale(1.1)', opacity: '0' },
-                                '100%': { transform: 'scale(1)', opacity: '1' },
-                            },
-                            float: {
-                                '0%, 100%': { transform: 'translateY(0)' },
-                                '50%': { transform: 'translateY(-10px)' },
-                            },
-                        },
-                        aspectRatio: {
-                            'portrait': '3/4',
-                            'landscape': '4/3',
-                            'ultrawide': '21/9',
+                        borderRadius: {
+                            none: "0px",
+                            sm: "4px",
+                            DEFAULT: "8px",
+                            md: "12px",
+                            lg: "16px",
+                            xl: "20px",
+                            "2xl": "24px",
+                            "3xl": "32px",
+                            full: "9999px",
+                            button: "8px",
                         },
                     },
                 },
-                variants: {
-                    extend: {
-                        opacity: ['disabled'],
-                        cursor: ['disabled'],
-                        backgroundColor: ['active', 'disabled'],
-                        textColor: ['active', 'disabled'],
-                    },
-                },
+            };
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            :where([class^="ri-"])::before {
+                content: "\f3c2";
             }
-        });
-    </script>
-
-    <!-- Utilities and Components -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
-
-    <!-- Optimized Font Loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Dynamic Meta Tags -->
-    <meta name="description" content="{{project.meta.ogDescription}}">
-    <meta name="keywords" content="{{project.meta.keywords}}">
-    <!-- <meta name="robots" content="{{project.meta.robotsMeta}}">
-  <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
-  <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
-  <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
-  <meta name="bing-verification" content="{{project.meta.bingVerification}}">
-  <meta property="og:title" content="{{project.meta.ogTitle}}">
-  <meta property="og:description" content="{{project.meta.ogDescription}}">
-  <meta property="og:image" content="{{project.meta.ogImage}}">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="{{project.name}}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{project.meta.ogTitle}}">
-  <meta name="twitter:description" content="{{project.meta.ogDescription}}">
-  <meta name="twitter:image" content="{{project.meta.ogImage}}"> -->
-
-    <link rel="icon" type="image/x-icon" href="aacl.jpg">
-
-</head>
-
-<body class="antialiased text-gray-800 min-h-screen flex flex-col">
-
-    <!-- Header -->
-    <header class="relative z-50 bg-white dark:bg-gray-900">
-        <!-- Header content goes here -->
-    </header>
-
-    <!-- Main content area -->
-    <main id="main-content" class="flex-1 relative">
-        <!-- Content will be injected here -->
-    </main>
-
-    <!-- {bodyScripts} -->
-
-</body>
-
-</html>
-<element id="a50d0cd3-a067-4aac-87c7-16f4032ad3a1" data-section-id="a50d0cd3-a067-4aac-87c7-16f4032ad3a1">
-
-
-    <div id="root">
-        <section id="hero" class="relative min-h-[70vh]"
-            style="background-image: url('assets/mumbai-india.jpg'); background-size: cover; background-position: center;">
-            <!-- Navigation -->
-            <nav class="fixed w-full z-50 bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-800">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between items-center h-16">
-                        <!-- Logo -->
-                        <div class="flex-shrink-0 text-white font-bold text-xl">
-                            IJCNLP-AACL 2025
-                        </div>
-
-                        <!-- Desktop Nav -->
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="/conferences/ijcnlp2025/"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Home</a>
-                                <a href="#about"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">About</a>
-                                <a href="#dates"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Dates</a>
-                                <a href="#submissions"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Submissions</a>
-                                <!-- <a href="#speakers"
-                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Speakers</a> -->
-                                <a href="#organizers"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Organizers</a>
-                                <a href="#schedule"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Schedule</a>
-                                <!-- <a href="#workshops"
-                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Workshops</a> -->
-                                <a href="#registration"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Registration</a>
-                                <a href="#sponsors"
-                                    class="text-gray-200 hover:text-white px-3 py-2 rounded-md text-md transition-colors">Sponsors</a>
-                            </div>
-                        </div>
-
-                        <!-- Mobile menu button -->
-                        <div class="md:hidden">
-                            <button id="mobile-menu-button"
-                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
+            body {
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-white">
+        <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+            <nav
+                class="container mx-auto px-6 h-20 flex items-center justify-between"
+            >
+                <div class="flex items-center gap-2">
+                    <!-- replace the logo text with logo image -->
+                    <img
+                        src="assets/logos/iitb.png"
+                        alt="Logo"
+                        class="w-8 h-8"
+                    />
+                    <span class="text-lg font-semibold"
+                        >IJCNLP & AACL 2025</span
+                    >
+                </div>
+                <div class="hidden xl:flex items-center gap-6">
+                    <a
+                        href="index.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Home</a
+                    >
+                    <a
+                        href="Call_for_papers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Call for Papers</a
+                    >
+                    <a
+                        href="Dates.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Important Dates</a
+                    >
+                    <a
+                        href="Organizers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Organizers</a
+                    >
+                    <a
+                        href="Venue.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Venue</a
+                    >
+                    <a
+                        href="Registrations.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Registration</a
+                    >
+                    <a
+                        href="Schedule.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Schedule</a
+                    >
+                    <a
+                        href="Speakers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Speakers</a
+                    >
+                    <a
+                        href="Venue.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Venue</a
+                    >
+                    <!-- <button
+                        class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                    >
+                        Submit Paper
+                    </button> -->
+                </div>
+                <button
+                    class="xl:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
+                    id="mobileMenuBtn"
+                >
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </nav>
+        </header>
+        <div
+            class="fixed top-20 left-0 right-0 bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 lg:hidden"
+            id="mobileMenu"
+        >
+            <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+                <a
+                    href="index.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Home</a
+                >
+                <a
+                    href="Call_for_papers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Call for Papers</a
+                >
+                <a
+                    href="Dates.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Important Dates</a
+                >
+                <a
+                    href="Organizers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Organizers</a
+                >
+                <a
+                    href="Venue.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Venue</a
+                >
+                <a
+                    href="Registrations.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Registration</a
+                >
+                <a
+                    href="Schedule.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Schedule</a
+                >
+                <a
+                    href="Speakers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Speakers</a
+                >
+                <a
+                    href="Venue.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Venue</a
+                >
+                <!-- <button
+                    class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                >
+                    Submit Paper
+                </button> -->
+            </div>
+        </div>
+        <main class="pt-20">
+            <section
+                id="home"
+                class="relative h-[600px] flex items-center overflow-hidden"
+            >
+                <div class="absolute inset-0 z-0">
+                    <img
+                        src="https://public.readdy.ai/ai/img_res/df62ab3a3de102837b779c1e1b88e96e.jpg"
+                        class="w-full h-full object-cover object-center"
+                        alt="Mumbai Conference Venue"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-white/95 to-white/50"
+                    ></div>
+                </div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="max-w-2xl">
+                        <h1 class="text-5xl font-bold mb-4">
+                            IJCNLP & AACL 2025
+                        </h1>
+                        <p class="text-2xl text-gray-700 mb-4">
+                            14th International Joint Conference on Natural
+                            Language Processing & 4th Asia-Pacific Chapter of
+                            the Association for Computational Linguistics
+                        </p>
+                        <p class="text-xl text-gray-600 mb-8">
+                            December 20-24, 2025 • IIT Bombay, India
+                        </p>
+                        <div class="flex gap-4">
+                            <button
+                                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors text-lg whitespace-nowrap cursor-pointer"
+                            >
+                                Register Now
+                            </button>
+                            <button
+                                class="bg-white border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary/5 transition-colors text-lg whitespace-nowrap cursor-pointer"
+                            >
+                                Learn More
                             </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Mobile menu -->
-                <div id="mobile-menu" class="hidden md:hidden bg-neutral-900/80 border-b border-neutral-800">
-                    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="/conferences/ijcnlp2025/"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                        <a href="#about"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
-                        <a href="#dates"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Important
-                            Dates</a>
-                        <a href="#submissions"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Submissions</a>
-                        <a href="#speakers"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Speakers</a>
-                        <a href="#organizers"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Organizers</a>
-                        <a href="#schedule"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Schedule</a>
-                        <a href="#workshops"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Workshops</a>
-                        <a href="#registration"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Registration</a>
-                        <a href="#sponsors"
-                            class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sponsors</a>
+            </section>
+            <section id="updates" class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12">
+                        Latest Updates
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <div class="text-sm text-gray-500 mb-2">
+                                May 12, 2025
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">
+                                Call for Tutorials
+                            </h3>
+                            <p class="text-gray-600">
+                                Call for tutorials is now open. Submit your
+                                proposals.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <div class="text-sm text-gray-500 mb-2">
+                                February 20, 2025
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">
+                                Organizing Committee
+                            </h3>
+                            <p class="text-gray-600">
+                                Organizing Committee has been finalized.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <div class="text-sm text-gray-500 mb-2">
+                                December 25, 2024
+                            </div>
+                            <h3 class="text-xl font-semibold mb-4">
+                                Dates Finalized
+                            </h3>
+                            <p class="text-gray-600">
+                                The dates for IJCNLP 2025 have been finalized.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Hero Content -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-                <div class="text-center animate__animated animate__fadeIn">
-                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                        <span class="block">14th IJCNLP & 4th AACL</span>
-                        <span class="block text-blue-500 mt-2">Mumbai, India</span>
-                    </h1>
-                    <p
-                        class="mt-3 max-w-md mx-auto text-base text-white font-bold sm:text-lg md:mt-5 md:text-2xl md:max-w-3xl animate__animated animate__fadeIn animate__delay-1s">
-                        International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the
-                        Association for
-                        Computational Linguistics
-                    </p>
-                    <span class="block text-2xl sm:text-3xl md:text-4xl font-bold text-blue-500 mt-3 tracking-tight">Dec
-                        20-24, 2025</span>
-                    <!-- <div
-              class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8 animate__animated animate__fadeIn animate__delay-2s">
-              <div class="rounded-md shadow">
-                <a href="#"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition-colors">
-                  Submit Paper
-                </a>
-              </div>
-              <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <a href="#"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition-colors">
-                  Register Now
-                </a>
-              </div>
-            </div> -->
+            </section>
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-6">
+                                About IJCNLP 2025
+                            </h2>
+                            <p class="text-gray-600 mb-4">
+                                The International Joint Conference on Natural
+                                Language Processing (IJCNLP) is a leading forum
+                                for research in Natural Language Processing. The
+                                conference brings together researchers and
+                                industry practitioners to share the latest
+                                advances in the field.
+                            </p>
+                            <p class="text-gray-600 mb-6">
+                                In 2025, IJCNLP will be held in IIT Bombay,
+                                featuring keynote speeches, technical paper
+                                presentations, tutorials, workshops, and
+                                industry tracks focusing on cutting-edge NLP
+                                research and applications.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <img
+                                    src="assets/logos/aacl.jpg"
+                                    alt="Logo"
+                                    class="w-8 h-8"
+                                />
+                                <div class="h-8 w-px bg-gray-300"></div>
+                                <span class="text-xl font-semibold">AFNLP</span>
+                            </div>
+                        </div>
+                        <div
+                            class="relative h-[400px] rounded-lg overflow-hidden"
+                        >
+                            <img
+                                src="https://public.readdy.ai/ai/img_res/863ab4970b66a4e9120e4ec0452ced17.jpg"
+                                class="w-full h-full object-cover"
+                                alt="Conference Discussion"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <script>
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-
-            mobileMenuButton.addEventListener('click', () => {
-                const isMenuOpen = mobileMenu.classList.contains('hidden');
-
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('hidden');
-                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-                }
-            });
-
-            // Close mobile menu on window resize
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 768) {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-                }
-            });
-        </script>
-    </div>
-</element>
-<element id="92b73479-fa56-4010-b689-7c53b88da485" data-section-id="92b73479-fa56-4010-b689-7c53b88da485">
-
-
-    <div id="root">
-        <section id="about" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-[#1a3c5a] sm:text-4xl">
-                        About the Conference
+            </section>
+            <!-- <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-3xl font-bold text-center mb-12">
+                        Stay Updated
                     </h2>
-                    <div class="mt-4 max-w-3xl mx-auto">
-                        <p class="text-xl text-neutral-600">
-                            The premier gathering for Natural Language Processing and Computational Linguistics
+                    <div class="max-w-xl mx-auto">
+                        <form class="flex gap-4" id="newsletterForm">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                class="flex-1 px-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:border-primary"
+                            />
+                            <button
+                                type="submit"
+                                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                            >
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section> -->
+        </main>
+        <footer class="bg-gray-900 text-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <img
+                                src="assets/logos/iitb.png"
+                                alt="Logo"
+                                class="w-8 h-8"
+                            />
+                            <span class="text-lg font-semibold"
+                                >IJCNLP & AACL 2025</span
+                            >
+                        </div>
+                        <p class="text-gray-400">
+                            14th International Joint Conference on Natural
+                            Language Processing & 4th Asia-Pacific Chapter of
+                            the Association for Computational Linguistics
                         </p>
                     </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-mail-line"></i>
+                                <a
+                                    href="mailto:contact@ijcnlp-aacl2025.org"
+                                    class="text-gray-400 hover:text-white transition-colors"
+                                    >contact@ijcnlp-aacl2025.org</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-map-pin-2-line"></i>
+                                <span class="text-gray-400"
+                                    >IIT Bombay, Mumbai, India</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                        <div class="flex gap-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-linkedin-line"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div
-                    class="grid md:grid-cols-2 gap-12 items-center animate__animated animate__fadeIn animate__delay-1s">
-                    <div class="space-y-6">
-                        <div class="bg-neutral-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                            <h3 class="text-xl font-bold text-[#1a3c5a] mb-3">
-                                IJCNLP 2025
-                            </h3>
-                            <p class="text-neutral-600">
-                                The 14th International Joint Conference on Natural Language Processing (IJCNLP) brings
-                                together
-                                researchers and practitioners from around the world to share the latest advances in NLP
-                                research and
-                                applications.
-                            </p>
-                        </div>
-
-                        <div class="bg-neutral-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                            <h3 class="text-xl font-bold text-[#1a3c5a] mb-3">
-                                AACL 2025
-                            </h3>
-                            <p class="text-neutral-600">
-                                The 4th Conference of the Asia-Pacific Chapter of the Association for Computational
-                                Linguistics (AACL)
-                                focuses on promoting research in computational linguistics and natural language
-                                processing in the
-                                Asia-Pacific region.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div
-                            class="bg-[#1a3c5a] text-white p-8 rounded-lg animate__animated animate__fadeIn animate__delay-2s">
-                            <h3 class="text-xl font-bold mb-4">Conference Highlights</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 text-blue-400 mr-2" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    <span>World-class keynote speakers and presentations</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 text-blue-400 mr-2" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    <span>Interactive workshops and tutorials</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 text-blue-400 mr-2" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    <span>Networking opportunities with global researchers</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <svg class="h-6 w-6 text-blue-400 mr-2" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    <span>Paper presentations and poster sessions</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div
-                            class="bg-blue-50 p-6 rounded-lg border border-blue-100 animate__animated animate__fadeIn animate__delay-3s">
-                            <h3 class="text-lg font-semibold text-[#1a3c5a] mb-2">Venue</h3>
-                            <a href="https://maps.app.goo.gl/Cd9JPMaiWr7TDjy46">
-                                <p class="text-neutral-600">
-                                    Victor Menezes Convention Centre (VMCC), IIT Bombay, Mumbai, India.
-                                </p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</element>
-<element id="7902f96f-a49b-4580-ae92-cf5f63cfaeff" data-section-id="7902f96f-a49b-4580-ae92-cf5f63cfaeff">
-
-
-    <div id="root">
-        <section id="dates" class="py-24 bg-neutral-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                        Important Dates
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-400">
-                        Mark your calendar for these key deadlines
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Paper Submissions -->
-                    <div
-                        class="bg-neutral-800 rounded-lg p-6 animate__animated animate__fadeIn animate__delay-1s hover:transform hover:scale-105 transition-transform">
-                        <div class="flex items-center mb-4">
-                            <svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <h3 class="ml-3 text-xl font-bold text-white">IJCNLP-AACL 2025</h3>
-                        </div>
-                        <ul class="space-y-3 text-neutral-300">
-                            <li class="flex justify-between">
-                                <span>ARR submission deadline</span>
-                                <span class="font-semibold">July 28, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Commitment deadline</span>
-                                <span class="font-semibold">October 10, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Notification of acceptance</span>
-                                <span class="font-semibold">October 25, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Camera-ready papers due</span>
-                                <span class="font-semibold">November 10, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Main Conference</span>
-                                <span class="font-semibold">December 20-22, 2025</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Workshop Proposals -->
-                    <div
-                        class="bg-neutral-800 rounded-lg p-6 animate__animated animate__fadeIn animate__delay-2s hover:transform hover:scale-105 transition-transform">
-                        <div class="flex items-center mb-4">
-                            <svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            <h3 class="ml-3 text-xl font-bold text-white">Workshop</h3>
-                        </div>
-                        <ul class="space-y-3 text-neutral-300">
-                            <li class="flex justify-between">
-                                <span>Proposal submission due</span>
-                                <span class="font-semibold">April 30, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Notification of proposal acceptance</span>
-                                <span class="font-semibold">May 21, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>First Call for papers</span>
-                                <span class="font-semibold">July 22, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Second Call for papers</span>
-                                <span class="font-semibold">August 22, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Third Call for papers</span>
-                                <span class="font-semibold">September 22, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Paper submission deadline</span>
-                                <span class="font-semibold">September 29, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>ARR commitment deadline</span>
-                                <span class="font-semibold">October 27, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Notification of acceptance</span>
-                                <span class="font-semibold">November 3, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Camera-ready papers due</span>
-                                <span class="font-semibold">November 11, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Proceeding due</span>
-                                <span class="font-semibold">December 1, 2025</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Registration -->
-                    <div
-                        class="bg-neutral-800 rounded-lg p-6 animate__animated animate__fadeIn animate__delay-3s hover:transform hover:scale-105 transition-transform">
-                        <div class="flex items-center mb-4">
-                            <svg class="h-8 w-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <h3 class="ml-3 text-xl font-bold text-white">Registration</h3>
-                        </div>
-                        <ul class="space-y-3 text-neutral-300">
-                            <li class="flex justify-between">
-                                <span>Early Bird Ends</span>
-                                <span class="font-semibold">November 10-30, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Regular Ends</span>
-                                <span class="font-semibold">December 1-19, 2025</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span>Conference Dates</span>
-                                <span class="font-semibold">December 20-24, 2025</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-12 text-center">
-                    <button onclick="downloadCalendar()"
-                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors animate__animated animate__fadeIn animate__delay-4s">
-                        Add to Calendar
-                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </section>
-    </div>
-    <script>
-        function downloadCalendar() {
-            const icsContent = `BEGIN:VCALENDAR
-    VERSION:2.0
-    PRODID:-//xAI//IJCNLP-AACL 2025//EN
-    BEGIN:VEVENT
-    SUMMARY:IJCNLP-AACL 2025 Main Conference
-    DTSTART:20251220T090000Z
-    DTEND:20251222T170000Z
-    DESCRIPTION:International Joint Conference on Natural Language Processing and Asian-Australasian Conference on Language
-    LOCATION:TBD
-    END:VEVENT
-    BEGIN:VEVENT
-    SUMMARY:IJCNLP-AACL 2025 Workshops
-    DTSTART:20251220T090000Z
-    DTEND:20251224T170000Z
-    DESCRIPTION:IJCNLP-AACL 2025 Workshop Sessions
-    LOCATION:TBD
-    END:VEVENT
-    BEGIN:VEVENT
-    SUMMARY:IJCNLP-AACL 2025 Paper Submission Deadline
-    DTSTART;VALUE=DATE:20250728
-    DTEND;VALUE=DATE:20250729
-    DESCRIPTION:ARR Submission Deadline for IJCNLP-AACL 2025
-    END:VEVENT
-    BEGIN:VEVENT
-    SUMMARY:IJCNLP-AACL 2025 Registration Early Bird Deadline
-    DTSTART;VALUE=DATE:20250915
-    DTEND;VALUE=DATE:20250916
-    DESCRIPTION:Early Bird Registration Deadline
-    END:VEVENT
-    END:VCALENDAR`;
-
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'IJCNLP-AACL-2025-Calendar.ics';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
-</element>
-<element id="c4a352c3-a21d-4b07-9128-c71e59a6ed56" data-section-id="c4a352c3-a21d-4b07-9128-c71e59a6ed56">
-    <div id="root">
-        <section id="submissions" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-[#1a3c5a] sm:text-4xl">
-                        Paper Submissions
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-600">
-                        Guidelines and submission information for all tracks
-                    </p>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="border-b border-neutral-200">
-                        <div class="flex flex-wrap -mb-px" role="tablist" id="submissionTabs">
-                            <button
-                                class="tab-button active mr-2 inline-block p-4 text-[#1a3c5a] hover:text-blue-600 border-b-2 border-[#1a3c5a] font-medium"
-                                data-tab="main">
-                                Main Conference
-                            </button>
-                            <button
-                                class="tab-button mr-2 inline-block p-4 text-neutral-500 hover:text-[#1a3c5a] border-b-2 border-transparent font-medium"
-                                data-tab="workshops">
-                                Workshops
-                            </button>
-                            <button
-                                class="tab-button inline-block p-4 text-neutral-500 hover:text-[#1a3c5a] border-b-2 border-transparent font-medium"
-                                data-tab="demos">
-                                System Demos
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="tab-content" id="main">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div class="bg-neutral-50 p-6 rounded-lg">
-                                    <h3 class="text-xl font-bold text-[#1a3c5a] mb-4">Submission Topics</h3>
-                                    <p class="text-neutral-600 mb-2">IJCNLP-AACL 2025 aims to have a broad technical
-                                        program. Relevant topics for the conference include, but are not limited to, the
-                                        following areas:</p>
-                                    <ul
-                                        class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-neutral-600 list-disc pl-5">
-                                        <li>Computational Social Science and Cultural Analytics</li>
-                                        <li>Dialogue and Interactive Systems</li>
-                                        <li>Discourse and Pragmatics</li>
-                                        <li>Efficient/Low-resource Methods for NLP</li>
-                                        <li>Ethics, Bias, and Fairness</li>
-                                        <li>Generation</li>
-                                        <li>Information Extraction</li>
-                                        <li>Information Retrieval and Text Mining</li>
-                                        <li>Interpretability and Analysis of Models for NLP</li>
-                                        <li>Language Modeling</li>
-                                        <li>Linguistic theories, Cognitive Modeling and Psycholinguistics</li>
-                                        <li>Machine Learning for NLP</li>
-                                        <li>Machine Translation</li>
-                                        <li>Multilinguality and Language Diversity</li>
-                                        <li>Multimodality and Language Grounding to Vision, Robotics and Beyond</li>
-                                        <li>NLP Applications</li>
-                                        <li>Phonology, Morphology and Word Segmentation</li>
-                                        <li>Question Answering</li>
-                                        <li>Resources and Evaluation</li>
-                                        <li>Semantics: Lexical, Sentence-level Semantics, Textual Inference and Other
-                                            Areas</li>
-                                        <li>Sentiment Analysis, Stylistic Analysis, and Argument Mining</li>
-                                        <li>Speech Processing and Spoken Language Understanding</li>
-                                        <li>Summarization</li>
-                                        <li>Syntax: Tagging, Chunking and Parsing</li>
-                                        <li>Special Theme: Advanced Reasoning and Chain-of-Thought in Language Models
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="space-y-6">
-                                <div class="bg-[#1a3c5a] p-6 rounded-lg text-white">
-                                    <h3 class="text-xl font-bold mb-4">Submission Info</h3>
-                                    <p class="mb-2 text-neutral-100">IJCNLP-AACL 2025 will use ACL Rolling Review (ARR)
-                                        as a reviewing system. Both submissions of articles for review and commitment of
-                                        reviewed articles to the conference will be performed via the Open Review
-                                        platform. Specifically, authors will follow a two-step process:</p>
-                                    <ul class="list-disc ml-4 mb-4 text-neutral-300">
-                                        <li>Authors submit articles to ARR, where submissions receive reviews and
-                                            meta-reviews from ARR reviewers and action editors</li>
-                                        <li>Authors commit their reviewed articles to a publication venue (e.g.,
-                                            IJCNLP-AACL 2025), where Senior Area Chairs and Program Chairs make
-                                            acceptance decisions from the ARR reviews and meta-reviews.</li>
-                                    </ul>
-                                    <div class="space-y-4 mb-4">
-                                        <a href="https://aclrollingreview.org/cfp" target="_blank"
-                                            class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                                            <svg class="h-6 w-6 mr-3" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                                                </path>
-                                            </svg>
-                                            ACL Rolling Review(ARR)
-                                        </a>
-                                    </div>
-                                    <span class="text-neutral-300">For questions related to paper submission, and the
-                                        review process in general, <br> email: editors@aclrollingreview.org</span>
-                                </div>
-
-                                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                                    <h3 class="text-lg font-semibold text-[#1a3c5a] mb-4">Submission Portal</h3>
-                                    <p class="text-neutral-600 mb-4">
-                                        All submissions must be made through the conference management system.
-                                    </p>
-                                    <a href="#"
-                                        class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#1a3c5a] hover:bg-blue-700 transition-colors">
-                                        Submit Paper
-                                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-content hidden" id="workshops">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="space-y-6">
-                                <div class="bg-neutral-50 p-6 rounded-lg">
-                                    <h3 class="text-xl font-bold text-[#1a3c5a] mb-4">Call for workshops</h3>
-                                    <p class="text-neutral-600 mb-2">The 14th International Joint Conference on Natural
-                                        Language Processing (IJCNLP) and the 4th Conference of the Asia-Pacific Chapter
-                                        of the Association for Computational Linguistics (AACL) invites proposals for
-                                        workshops to be held in conjunction with IJCNLP-AACL in 2025 in Mumbai (India).
-                                        We solicit proposals in all areas of computational linguistics, language
-                                        resources and evaluation, broadly conceived to include related disciplines such
-                                        as linguistics, language documentation, natural language processing, speech and
-                                        multimodal processing, computational social science, and the digital humanities.
-                                        <br><br>The two pages for the main proposal must include the following:
-                                    </p>
-                                    <ul class="gap-2 text-md text-neutral-600 list-disc pl-5">
-                                        <li>A title and a brief description of the workshop topic and content.</li>
-                                        <li>A list of invited speakers, if applicable, with an indication of which ones
-                                            have already agreed and which are tentative, and sources of funding for the
-                                            speakers, if needed.</li>
-                                        <li>An estimate of the number of attendees.</li>
-                                        <li>Workshop format: in-person preferred; hybrid format may be allowed under
-                                            special circumstances.</li>
-                                        <li>A description of any shared tasks associated with the workshop, and estimate
-                                            of the number of participants. Note that any shared task will also need to
-                                            be reviewed by the workshop committee for ethical concerns.</li>
-                                        <li>A description of special requirements and technical needs, where relevant.
-                                        </li>
-                                        <li>If the workshop has been held before, a note specifying where previous
-                                            iterations of the workshops were held, how many submissions the workshop
-                                            received, how many papers were accepted (also specify whether they were not
-                                            regular papers, e.g., shared task system description papers, non-archival
-                                            papers), and how many attendees the workshop attracted.</li>
-                                    </ul>
-                                    <p class="text-neutral-600 my-4">The proposals should be submitted no later than
-                                        April 30th, 2025, 11:59 PM Samoa Standard Time (SST) (UTC/GMT-11, 'Anywhere on
-                                        Earth).<br><br>At least one of the organisers of the accepted workshops must be
-                                        present in person in Mumbai, India.</p>
-                                    <span class="text-neutral-600 mt-4">For queries related to workshop submission, and
-                                        the review process in general, <br> email:
-                                        AACL-IJCNLP25-Workshop_Chairs@googlegroups.com</span>
-                                </div>
-                            </div>
-                            <div class="space-y-6">
-                                <div class="bg-[#1a3c5a] p-6 rounded-lg text-white">
-                                    <h3 class="text-xl font-bold mb-4">Submission Information</h3>
-                                    <p class="mb-2 text-neutral-100">Proposals should be submitted as PDF documents.
-                                        Note that submissions should essentially be ready to be turned into a Call for
-                                        Workshop Papers shortly after the notification. The proposals should be at most
-                                        two pages long for the main proposal, with additional two pages permitted for
-                                        information about organisers and tentative program committee. Hence, the entire
-                                        proposal should not exceed FOUR pages in length, excluding references. Please
-                                        note that workshops are encouraged to be in-person; hybrid formats may be
-                                        allowed in special circumstances. For in-person workshops, at least one workshop
-                                        organiser should be physically present to run the workshop at IJCNLP-AACL 2025.
-                                    </p>
-                                    <span class="text-neutral-300">The two pages for information about organisers,
-                                        program committee, and references must include the following:</span>
-                                    <ul class="gap-2 text-sm text-neutral-100 list-disc pl-5">
-                                        <li>The names, affiliations, and email addresses of the organisers, with
-                                            one-paragraph statements of their research interests, areas of expertise,
-                                            and experience in organising workshops and related events.</li>
-                                        <li>A list of Program Committee members, with an indication of which members
-                                            have already agreed. Organisers should do their best to estimate the number
-                                            of submissions (especially for recurring workshops) in order to (a) ensure a
-                                            sufficient number of reviewers so that each paper receives 3 reviews, and
-                                            (b) anticipate that no one is committed to reviewing more than 3 papers.
-                                            This practice is likely to ensure on-time, and more thorough and thoughtful
-                                            reviews.</li>
-                                        <li>A very brief advertisement or tagline for the workshop, up to 140
-                                            characters, that highlights any key information you wish prospective
-                                            attendees to know, and which would be suitable to be put onto a web-based
-                                            survey (see below).</li>
-                                        <li>An indication whether the workshop will consider papers submitted through
-                                            ACL Rolling Review (ARR); use OpenReview as a platform (both to take papers
-                                            from ARR and for their own review); or whether the workshop will only use
-                                            START as a platform, and will not use ARR. In making this choice, please pay
-                                            careful attention to the ARR deadlines and conference notifications.</li>
-                                        <li>Unlimited space for references</li>
-                                    </ul>
-                                </div>
-
-                                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                                    <h3 class="text-lg font-semibold text-[#1a3c5a] mb-4">Submission</h3>
-                                    <p class="text-neutral-600 mb-4">
-                                        All submissions must be made through the IJCNLP-AACL 2025 Workshop Proposal
-                                        Submission Site.
-                                    </p>
-                                    <div class="flex">
-                                        <a href="https://www.overleaf.com/read/dmnfxtgzjhqt#17e9ba" target="_blank"
-                                            class="inline-flex items-center px-4 py-2 mr-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700 transition-colors">
-                                            Proposal Template
-                                        </a>
-                                        <a href="https://softconf.com/aacl2025/workshops" target="_blank"
-                                            class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#1a3c5a] hover:bg-blue-700 transition-colors">
-                                            Submit Paper
-                                            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-content hidden" id="demos">
-                        yet to be updated...
-                        <!-- <div class="grid md:grid-cols-2 gap-8">
-              <div class="space-y-6">
-                <div class="bg-neutral-50 p-6 rounded-lg">
-                  <h3 class="text-xl font-bold text-[#1a3c5a] mb-4">Submission Topics</h3>
-                  <p class="text-neutral-600 mb-2">IJCNLP-AACL 2025 aims to have a broad technical program. Relevant topics for the conference include, but are not limited to, the following areas:</p>
-                  <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-neutral-600 list-disc pl-5">
-                    <li>Computational Social Science and Cultural Analytics</li>
-                    <li>Dialogue and Interactive Systems</li>
-                    <li>Discourse and Pragmatics</li>
-                    <li>Efficient/Low-resource Methods for NLP</li>
-                    <li>Ethics, Bias, and Fairness</li>
-                    <li>Generation</li>
-                    <li>Information Extraction</li>
-                    <li>Information Retrieval and Text Mining</li>
-                    <li>Interpretability and Analysis of Models for NLP</li>
-                    <li>Language Modeling</li>
-                    <li>Linguistic theories, Cognitive Modeling and Psycholinguistics</li>
-                    <li>Machine Learning for NLP</li>
-                    <li>Machine Translation</li>
-                    <li>Multilinguality and Language Diversity</li>
-                    <li>Multimodality and Language Grounding to Vision, Robotics and Beyond</li>
-                    <li>NLP Applications</li>
-                    <li>Phonology, Morphology and Word Segmentation</li>
-                    <li>Question Answering</li>
-                    <li>Resources and Evaluation</li>
-                    <li>Semantics: Lexical, Sentence-level Semantics, Textual Inference and Other Areas</li>
-                    <li>Sentiment Analysis, Stylistic Analysis, and Argument Mining</li>
-                    <li>Speech Processing and Spoken Language Understanding</li>
-                    <li>Summarization</li>
-                    <li>Syntax: Tagging, Chunking and Parsing</li>
-                    <li>Special Theme: Advanced Reasoning and Chain-of-Thought in Language Models</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="space-y-6">
-                <div class="bg-[#1a3c5a] p-6 rounded-lg text-white">
-                  <h3 class="text-xl font-bold mb-4">Submission Info</h3>
-                  <p class="mb-2 text-neutral-100">IJCNLP-AACL 2025 will use ACL Rolling Review (ARR) as a reviewing system. Both submissions of articles for review and commitment of reviewed articles to the conference will be performed via the Open Review platform. Specifically, authors will follow a two-step process:</p>
-                  <ul class="list-disc ml-4 mb-4 text-neutral-300">
-                    <li>Authors submit articles to ARR, where submissions receive reviews and meta-reviews from ARR reviewers and action editors</li>
-                    <li>Authors commit their reviewed articles to a publication venue (e.g., IJCNLP-AACL 2025), where Senior Area Chairs and Program Chairs make acceptance decisions from the ARR reviews and meta-reviews.</li>
-                  </ul>
-                  <div class="space-y-4 mb-4">
-                    <a href="https://aclrollingreview.org/cfp" target="_blank"
-                      class="flex items-center p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                      <svg class="h-6 w-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
-                        </path>
-                      </svg>
-                      ACL Rolling Review(ARR)
-                    </a>
-                  </div>
-                  <span class="text-neutral-300">For questions related to paper submission, and the review process in general, <br> email: editors@aclrollingreview.org</span>
-                </div>
-
-                <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                  <h3 class="text-lg font-semibold text-[#1a3c5a] mb-4">Submission Portal</h3>
-                  <p class="text-neutral-600 mb-4">
-                    All submissions must be made through the conference management system.
-                  </p>
-                  <a href="#"
-                    class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#1a3c5a] hover:bg-blue-700 transition-colors">
-                    Submit Paper
-                    <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const tabs = document.querySelectorAll(".tab-button");
-                const contents = document.querySelectorAll(".tab-content");
-
-                tabs.forEach(tab => {
-                    tab.addEventListener("click", () => {
-                        tabs.forEach(t => {
-                            t.classList.remove("active", "text-[#1a3c5a]", "border-[#1a3c5a]");
-                            t.classList.add("text-neutral-500", "border-transparent");
-                        });
-                        tab.classList.add("active", "text-[#1a3c5a]", "border-[#1a3c5a]");
-                        tab.classList.remove("text-neutral-500", "border-transparent");
-
-                        contents.forEach(content => content.classList.add("hidden"));
-                        document.getElementById(tab.dataset.tab).classList.remove("hidden");
-                    });
-                });
-            });
-        </script>
-    </div>
-</element>
-<element id="call-for-tutorials" data-section-id="call-for-tutorials">
-    <div id="root">
-        <section id="tutorials" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-[#1a3c5a] sm:text-4xl">
-                        Call for Tutorials
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-600">
-                        IJCNLP-AACL 2025 invites proposals for tutorials to be held in conjunction with the conference.
-                        We welcome proposals in all areas of natural language processing and computational linguistics,
-                        as well as in related non-CL/non-NLP areas of interest to our communities.<br>
-                        We especially encourage submissions from early-career researchers.
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-12 items-start animate__animated animate__fadeIn animate__delay-1s">
-                    <div class="space-y-8">
-                        <div class="bg-neutral-50 p-6 rounded-lg shadow-sm">
-                            <h3 class="text-xl font-bold text-[#1a3c5a] mb-3">Tutorial Types</h3>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-[#1a3c5a]">Cutting-edge:</h4>
-                                <ul class="list-disc pl-6 text-neutral-600">
-                                    <li><span class="font-semibold">Target audience:</span> participants with some prior
-                                        knowledge</li>
-                                    <li><span class="font-semibold">Scope:</span> brief introduction, but main focus on
-                                        the very latest advances, open research questions, and new directions</li>
-                                </ul>
-                            </div>
-                            <div class="mb-4">
-                                <h4 class="font-semibold text-[#1a3c5a]">Introduction to CL/NLP Topic:</h4>
-                                <ul class="list-disc pl-6 text-neutral-600">
-                                    <li><span class="font-semibold">Target audience:</span> beginners, no assumed
-                                        background</li>
-                                    <li><span class="font-semibold">Scope:</span> overview from foundational
-                                        developments to current state-of-the-art</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-[#1a3c5a]">Introduction to Non-CL/Non-NLP Topic:</h4>
-                                <ul class="list-disc pl-6 text-neutral-600">
-                                    <li><span class="font-semibold">Target audience:</span> beginners, no assumed
-                                        background</li>
-                                    <li><span class="font-semibold">Scope:</span> introduction to a topic that falls
-                                        outside the areas typically considered as CL/NLP, but is (or should be) of
-                                        interest to the IJCNLP-AACL communities.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-8">
-                        <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-                            <h3 class="text-xl font-bold text-[#1a3c5a] mb-3">Duration & Format</h3>
-                            <ul class="list-disc pl-6 text-neutral-600 mb-4">
-                                <li><span class="font-semibold">Half-day tutorials</span> (3-4 hours total, including
-                                    one 30-minute coffee break) are the default.</li>
-                            </ul>
-                            <ul class="list-disc pl-6 text-neutral-600">
-                                <li><span class="font-semibold">Full-day tutorials</span> (7-8 hours total, including
-                                    two coffee breaks totaling 1 hour, excluding lunch) may be proposed if well
-                                    justified.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal Buttons Row -->
-                <div class="mt-12 flex flex-wrap justify-center gap-4">
-                    <button @click="diversityModal = true"
-                        class="px-6 py-3 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors font-semibold">Diversity
-                        and Inclusion</button>
-                    <button @click="submissionModal = true"
-                        class="px-6 py-3 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors font-semibold">Submission
-                        Details</button>
-                    <button @click="evaluationModal = true"
-                        class="px-6 py-3 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors font-semibold">Evaluation
-                        Criteria</button>
-                    <button @click="responsibilitiesModal = true"
-                        class="px-6 py-3 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors font-semibold">Instructor
-                        Responsibilities & Chairs</button>
-                </div>
-                <!-- Modals -->
-                <div
-                    x-data="{diversityModal: false, submissionModal: false, evaluationModal: false, responsibilitiesModal: false}">
-                    <!-- Diversity Modal -->
-                    <div x-show="diversityModal"
-                        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                        style="display: none;" @keydown.escape.window="diversityModal = false">
-                        <div class="bg-white rounded-lg max-w-2xl w-full p-8 relative shadow-lg">
-                            <button @click="diversityModal = false"
-                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-                            <h3 class="text-2xl font-bold text-[#1a3c5a] mb-4">Diversity and Inclusion</h3>
-                            <p class="mb-2">The proposals should describe the ways in which the tutorial will support
-                                diversity in NLP. We suggest organizers consider the following points, while developing
-                                the proposal:</p>
-                            <ul class="list-disc pl-6 mb-2 text-neutral-700">
-                                <li><b>Contribution to academic diversity:</b> The proposals could explain how the
-                                    subject matter of the tutorial will contribute to the diversity of the field, e.g.
-                                    use of multilingual data, indications of how the described methods scale up to
-                                    various languages or domains, accessibility of resources, supporting
-                                    underrepresented communities of NLP and so on.</li>
-                                <li><b>Diversifying representation:</b> Following the WiNLP initiative, we recognize the
-                                    current problems of demographic imbalance in the field. Therefore, we particularly
-                                    encourage submissions including members of under-represented groups in computational
-                                    linguistics. The proposals should describe how their selection of invited speakers,
-                                    panelists, organizers, and program committee promotes diverse representation (for
-                                    example, considering underrepresented demographics based on gender, ethnicity,
-                                    nationality, and so on). We also suggest including speakers and panelists, who have
-                                    not appeared as a keynote speaker or panelist in recent conferences.</li>
-                                <li><b>Diversifying participation:</b> The proposals could describe how the
-                                    call-for-papers and outreach will encourage people from marginalized groups to
-                                    attend and submit to the tutorial. Some examples include providing mentoring,
-                                    subsidies, coordinating with affinity groups, diversifying the selection of papers
-                                    and so on.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Submission Details Modal -->
-                    <div x-show="submissionModal"
-                        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                        style="display: none;" @keydown.escape.window="submissionModal = false">
-                        <div
-                            class="bg-white rounded-lg max-w-2xl w-full p-8 relative shadow-lg overflow-y-auto max-h-[90vh]">
-                            <button @click="submissionModal = false"
-                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-                            <h3 class="text-2xl font-bold text-[#1a3c5a] mb-4">Submission Details</h3>
-                            <ul class="list-disc pl-6 mb-4 text-neutral-700">
-                                <li>A title that helps the potential attendees to understand what the tutorial will be
-                                    about.</li>
-                                <li>An abstract that summarizes the topics, goals, target audience, and type (see above)
-                                    of the tutorial (this abstract will also be shown on the IJCNLP-AACL 2025 website).
-                                </li>
-                                <li>A section called "Introduction" that explains the topic and summarizes the starting
-                                    point and relevance for our community and in general.</li>
-                                <li>A section called "Target Audience" that explains for whom the tutorial will be
-                                    developed and what the expected prior knowledge is. Clearly specify what attendees
-                                    should know and be able to practically do to get the most out of your tutorial.
-                                    Examples of what to specify include prior mathematical knowledge, knowledge of
-                                    specific modeling approaches and methods, programming skills, or adjacent areas like
-                                    computer vision. Also specify the number of expected participants.</li>
-                                <li>A section called "Outline" in which the various topics are explained. This can be a
-                                    list of bullet points or a set of paragraphs explaining the content. Explain what
-                                    you intend and how long the tutorial will be.</li>
-                                <li>A section called "Diversity Considerations", discussing each of the three aspects of
-                                    diversity mentioned above or others.</li>
-                                <li>A section called "Reading List": What are introductory papers or books that
-                                    potential attendees can read to get a first impression of the tutorial content? What
-                                    do you expect them to have read before attending? What does provide further
-                                    information beyond the content of the tutorial?</li>
-                                <li>A section called "Presenters" in which each tutorial presenter is briefly introduced
-                                    in one paragraph, including their research interests, their areas of expertise for
-                                    the tutorial topic, and their experience in teaching a diverse and international
-                                    audience.</li>
-                                <li>A section called "Other Information" which should include information on how many
-                                    people are expected to participate and how you came to this estimate. You can also
-                                    explain any other aspects that you find important, including special equipment that
-                                    you would need.</li>
-                                <li>A section called "Ethics Statement" which discusses ethical considerations related
-                                    to the topics of the tutorial.</li>
-                            </ul>
-                            <p class="mb-2">For writing the proposal, you can use the template provided below or any
-                                other format that follows the specified structure.</p>
-                            <a href="#" class="text-blue-700 underline font-semibold" target="_blank">IJCNLP-AACL 2025
-                                Tutorial Proposal Template</a>
-                            <br>
-                            <a href="https://softconf.com/aacl2025/tutorials"
-                                class="text-blue-700 underline font-semibold" target="_blank">Submit your proposal via
-                                START system</a>
-                            <p class="mt-2 text-sm text-neutral-500">We encourage 100% in-person tutorials. If and how
-                                many virtual and/or hybrid formats are possible will be decided at a later point. For
-                                in-person tutorials, at least one tutorial organiser is required to be physically
-                                present to run the tutorial at IJCNLP-AACL 2025.</p>
-                        </div>
-                    </div>
-                    <!-- Evaluation Criteria Modal -->
-                    <div x-show="evaluationModal"
-                        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                        style="display: none;" @keydown.escape.window="evaluationModal = false">
-                        <div
-                            class="bg-white rounded-lg max-w-2xl w-full p-8 relative shadow-lg overflow-y-auto max-h-[90vh]">
-                            <button @click="evaluationModal = false"
-                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-                            <h3 class="text-2xl font-bold text-[#1a3c5a] mb-4">Evaluation Criteria</h3>
-                            <ul class="list-disc pl-6 mb-4 text-neutral-700">
-                                <li>The tutorial proposals will be evaluated according to their originality and impact,
-                                    the expected interest level of participants, as well as the quality of the
-                                    organizing team and their contribution to the diversity of the conference.</li>
-                                <li>The aim of a tutorial is primarily to help participants understand a research topic
-                                    or wider research area, including both theoretical and practical aspects.
-                                    Presentations of particular technological solutions or systems are welcome, provided
-                                    that they serve as illustrations of broader scientific considerations. Tutorials
-                                    should strike a good balance in covering research from multiple groups and
-                                    perspectives.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Instructor Responsibilities Modal -->
-                    <div x-show="responsibilitiesModal"
-                        class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-                        style="display: none;" @keydown.escape.window="responsibilitiesModal = false">
-                        <div
-                            class="bg-white rounded-lg max-w-2xl w-full p-8 relative shadow-lg overflow-y-auto max-h-[90vh]">
-                            <button @click="responsibilitiesModal = false"
-                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
-                            <h3 class="text-2xl font-bold text-[#1a3c5a] mb-4">Instructor Responsibilities & Tutorial
-                                Chairs</h3>
-                            <ul class="list-disc pl-6 mb-4 text-neutral-700">
-                                <li>Accepted tutorial presenters will be notified by the date mentioned above. They must
-                                    then provide abstracts of their tutorials for inclusion in the conference
-                                    registration material by October 13, 2025. The abstract needs to be provided in
-                                    ASCII format. The summary will be submitted in PDF format and can be updated from
-                                    the version submitted for review. The instructors will make their material available
-                                    in an appropriate way, for instance, by setting up a website. They will be invited
-                                    to submit their slides to the ACL Anthology.</li>
-                            </ul>
-                            <h4 class="font-semibold text-[#1a3c5a] mt-4 mb-2">Tutorial Chairs</h4>
-                            <p class="mb-1">Email: <a href="mailto:aacl-ijcnlp25-tutorial_chairs@googlegroups.com"
-                                    class="text-blue-700 underline">aacl-ijcnlp25-tutorial_chairs@googlegroups.com</a>
-                            </p>
-                            <ul class="list-disc pl-6 text-neutral-700">
-                                <li>Benjamin Heinzerling, RIKEN AIP / Tohoku University</li>
-                                <li>Lun-Wei Ku, Academia Sinica</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-</element>
-<element id="285fda0b-b371-4b25-b25c-f7f2a7e2a3f4" data-section-id="285fda0b-b371-4b25-b25c-f7f2a7e2a3f4">
-
-
-    <div id="root">
-        <section id="organizers" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-[#1a3c5a] sm:text-4xl">
-                        Conference Organizers
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-600">
-                        Meet our dedicated team of chairs and organizers
-                    </p>
-                </div>
-
-                <!-- General Chair -->
-                <div class="mb-16 animate__animated animate__fadeIn">
-                    <h3 class="text-2xl font-bold text-[#1a3c5a] mb-8 text-center">General Chair</h3>
-                    <div class="flex justify-center">
-                        <div class="w-64 text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-48 h-48 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/odmbwa30hjiv3pxs3fvu.jpg" alt="kentaro">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Kentaro Inui</h4>
-                                <p class="text-neutral-600">Mohamed bin Zayed University of Artificial Intelligence</p>
-                                <a href="mailto:kentaro.inui@mbzuai.ac.ae"
-                                    class="text-blue-600 hover:text-blue-800 transition-colors">kentaro.inui@mbzuai.ac.ae</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Program Chairs -->
-                <div class="mb-16 animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="text-2xl font-bold text-[#1a3c5a] mb-8 text-center">Program Chairs</h3>
-                    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                        <!-- Chair 1 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/jjggyocntuqqqtjpzs9y.png" alt="sakriani">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Sakriani Sakti </h4>
-                                <p class="text-neutral-600">Nara Institute of Science and Technology
-                                </p>
-                                <a href="mailto: ssakti@is.naist.jp 
-              " class="text-blue-600 hover:text-blue-800 transition-colors"> ssakti@is.naist.jp
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Chair 2 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/hofen_vrlee0.png" alt="haofen">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Haofen Wang</h4>
-                                <p class="text-neutral-600">Tongji University</p>
-                                <a href="mailto:haofen.wang@tongji.edu.cn"
-                                    class="text-blue-600 hover:text-blue-800 transition-colors">haofen.wang@tongji.edu.cn</a>
-                            </div>
-                        </div>
-
-                        <!-- Chair 3 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/ijvhqylz0uegxdwgvq3g.png" alt="haofen">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Derek F. Wong</h4>
-                                <p class="text-neutral-600">University of Macau
-                                </p>
-                                <a href="mailto:derekfw@um.edu.mo"
-                                    class="text-blue-600 hover:text-blue-800 transition-colors">derekfw@um.edu.mo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Local Chairs -->
-                <div class="mb-16 animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="text-2xl font-bold text-[#1a3c5a] mb-8 text-center">Local Organizing Chairs</h3>
-                    <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                        <!-- Chair 1 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/PushpakBhattacharyya_kemexa.png" alt="pushpak">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Prof. Pushpak Bhattacharya</h4>
-                                <p class="text-neutral-600">IIT Bombay
-                                </p>
-                                <a href="mailto: pb@cse.iitb.ac.in"
-                                    class="text-blue-600 hover:text-blue-800 transition-colors"> pb@cse.iitb.ac.in
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Chair 2 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/zpxymgfddrwyr2avd6ud.jpg" alt="asif">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Asif Ekbal
-                                </h4>
-                                <p class="text-neutral-600">IIT Jodhpur
-
-                                </p>
-                                <a href="mailto:asif.ekbal@gmail.com 
-" class="text-blue-600 hover:text-blue-800 transition-colors">asif.ekbal@gmail.com
-
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Chair 3 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/j7end3ju7uou5741yb7k.png" alt="tanmoy">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Tanmoy Chakraborty
-                                </h4>
-                                <p class="text-neutral-600">IIT Delhi
-
-                                </p>
-                                <a href="mailto:chak.tanmoy.iit@gmail.com 
-" class="text-blue-600 hover:text-blue-800 transition-colors">chak.tanmoy.iit@gmail.com
-
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Chair 4 -->
-                        <div class="text-center">
-                            <div class="relative group">
-                                <div
-                                    class="w-40 h-40 mx-auto rounded-full overflow-hidden bg-neutral-200 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all">
-                                    <img src="assets/ne1sta32thalgr4yisax.jpg" alt="haofen">
-                                </div>
-                                <h4 class="text-lg font-semibold text-[#1a3c5a]">Dhirendra Pratap Singh
-                                </h4>
-                                <p class="text-neutral-600">IIT Bombay
-                                </p>
-                                <a href="mailto:dhirendra.singh@iitb.ac.in
- 
-" class="text-blue-600 hover:text-blue-800 transition-colors">dhirendra.singh@iitb.ac.in
-
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other Chairs -->
-                <div class="max-w-6xl mx-auto px-4 py-8">
-                    <div id="committee-sections" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Committee sections will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <script>
-        const committeeData = [
-            {
-                title: "Best Paper Award Chairs",
-                members: [
-                    { image: "assets/x7tr7wvixhocuddaxkrt.png", name: "Yufang Hou", affiliation: "IT:U Interdisciplinary Transformation University Austria (Austria)", email: "yufang.hou@it-u.at" },
-                    { image: "assets/b0msibffiz2mrdf6sskr.png", name: "Zhongyu Wei", affiliation: "Fudan University", email: "zywei@fudan.edu.cn" }
-                ]
-            },
-            {
-                title: "Tutorial Chairs",
-                members: [
-                    { image: "assets/tqxkt6wqo8lmyosjpqf9.png", name: "Benjamin Heinzerling", affiliation: "RIKEN / Tohoku University", email: "benjamin.heinzerling@riken.jp" },
-                    { image: "assets/wvxgjgozgpxkspkeukes.png", name: "Lun-Wei Ku", affiliation: "Academia Sinica", email: "lwku@iis.sinica.edu.tw" }
-                ]
-            },
-            {
-                title: "Workshop Chairs",
-                members: [
-                    { image: "assets/ecgakikyunhjy1phv3n4.png", name: "Lizhen Qu", affiliation: "Monash University", email: "lizhen.qu@monash.edu" },
-                    { image: "assets/fmbgn4eq0gdnnrg543ya.jpg", name: "Sowmya Vajjala", affiliation: "National Research Council Canada", email: "sowmya.vajjala@nrc-cnrc.gc.ca" }
-                ]
-            },
-            {
-                title: "Demonstration Chairs",
-                members: [
-                    { image: "assets/rwfub3xooin2gax2cbag.png", name: "Ayu Purwarianti", affiliation: "Bandung Institute of Technology", email: "ayu@informatika.org" },
-                    { image: "assets/k92dnlwczt9bzy4fyzmv.jpg", name: "Xuebo Liu", affiliation: "Harbin Institute of Technology, Shenzhen", email: "liuxuebo@hit.edu.cn" }
-                ]
-            },
-            {
-                title: "Ethics Chairs",
-                members: [
-                    { image: "assets/buix1uhvly3hh0q1zlik.png", name: "Rifki Afina Putri", affiliation: "Universitas Gadjah Mada", email: "rifki.putri@ugm.ac.id" },
-                    { image: "assets/wfsccyuxeja6zfm2bcws.jpg", name: "Yan Teng", affiliation: "Shanghai Artificial Intelligence Laboratory", email: "tengyan@pjlab.org.cn" }
-                ]
-            },
-            {
-                title: "Handbook Chairs",
-                members: [
-                    { image: "assets/b3fgsseqstimwyf8fnko.jpg", name: "Jixing Li", affiliation: "City University of Hong Kong", email: "jixingli@cityu.edu.hk" },
-                    { image: "assets/frtytkirdr8kc8dww3ne.jpg", name: "Yang Deng", affiliation: "Singapore Management University", email: "ydeng@smu.edu.sg" }
-                ]
-            },
-            {
-                title: "Publication Chairs",
-                members: [
-                    { image: "assets/z2da6cspg42x0acg4inf.png", name: "Adila Alfa Krisnadhi", affiliation: "University of Indonesia", email: "adila@cs.ui.ac.id" },
-                    { image: "assets/hmg78aexycrvjuivbi25.jpg", name: "Amelia Jing Li", affiliation: "Hong Kong Polytechnic University", email: "jing-amelia.li@polyu.edu.hk" },
-                    { image: "assets/wmn3eswinddj9ogtqjzl.png", name: "Qin Chen", affiliation: "East China Normal University", email: "qchen@cs.ecnu.edu.cn" }
-                ]
-            },
-            {
-                title: "Finance Chairs",
-                members: [
-                    { image: "assets/mkcrdzzr9hl0phst2z2d.jpg", name: "Biplab Banerjee", affiliation: "IIT Bombay", email: "bbanerjee@iitb.ac.in" },
-                    { image: "assets/uaj0ot0ke1llv6sgbkvm.png", name: "Dipti Misra Sharma", affiliation: "IIIT Hyderabad", email: "dipti@iiit.ac.in" },
-                    { image: "assets/pwmkovd6ylacdnxlj1cf.png", name: "Piyush Pandey", affiliation: "IIT Bombay", email: "piyush.pandey@iitb.ac.in" }
-                ]
-            },
-            {
-                title: "Diversity & Inclusion Chairs",
-                members: [
-                    { image: "assets/wg1faxrjslnkwpohditc.png", name: "Sriparna Saha", affiliation: "IIT Patna", email: "sriparna@iitp.ac.in" },
-                    { image: "assets/a5zok7bkjbo60o0dnlit.png", name: "Sudeshna Sarkar", affiliation: "IIT Kharagpur", email: "sudeshna@cse.iitkgp.ac.in" },
-                    { image: "assets/udvxnpp51vzzuhwxh53l.png", name: "Tirthankar Ghosal", affiliation: "Oak Ridge National Laboratory", email: "ghosalt@ornl.gov" }
-                ]
-            },
-            {
-                title: "Sponsorship Chairs",
-                members: [
-                    { image: "assets/yruponsyr7ns3yx2giap.png", name: "Aditya Joshi", affiliation: "University of New South Wales, Sydney", email: "aditya.joshi@unsw.edu.au" },
-                    { image: "assets/xm2v3p7cntlxiqejkbgq.jpg", name: "Manmeet Singh Kapoor", affiliation: "Technocraft Centre for Applied Artificial Intelligence, IIT Bombay", email: "manmeetsinghkapoor27@gmail.com" },
-                    { image: "assets/psjflz5pwuajfqcvwpqb.jpg", name: "Sudipta Kar", affiliation: "Oracle Health AI", email: "sudipta.kar.8080@gmail.com" }
-                ]
-            },
-            {
-                title: "Faculty Advisors to Student Research Workshop (SRW) Chairs",
-                members: [
-                    { image: "assets/ppbgi8caja5h9d5emhmj.png", name: "Daisuke Kawahara", affiliation: "Waseda University", email: "dkw@waseda.jp" },
-                    { image: "assets/xyfihx0al7cgia4qpmwm.jpg", name: "Xiting Wang", affiliation: "Renmin University of China", email: "xitingwang@ruc.edu.cn" }
-                ]
-            },
-            {
-                title: "Publicity Chairs",
-                members: [
-                    { image: "assets/c1hzf95vth7gzguzf4rj.jpg", name: "Raj Dabre", affiliation: "NICT Japan, IIT Madras, IIT Bombay", email: "prajdabre@gmail.com" },
-                    { image: "assets/unscw2n9y1qlpfdwbgfd.png", name: "Wenjie Wang", affiliation: "National University of Singapore", email: "wenjiewang96@gmail.com" },
-                    { image: "assets/r3s9wn2ej6y8zzp5sehm.jpg", name: "Sunny Manchanda", affiliation: "DYSL-AI", email: "manchanda.sunny@gmail.com" }
-                ]
-            },
-            {
-                title: "Registration Chairs",
-                members: [
-                    { image: "assets/sfamqq9w9xcpm83nboxk.png", name: "Gajanan Krishna Rane", affiliation: "IIT Bombay", email: "gkrane79@gmail.com" },
-                    { image: "assets/sjcyxvgql5ndzy5zbjvj.jpg", name: "Md Shad Akhtar", affiliation: "IIIT Delhi", email: "shad.akhtar@iiitd.ac.in" }
-                ]
-            },
-            {
-                title: "AACL Liaison",
-                members: [
-                    { image: "assets/maggie_dsbtyh.jpg", name: "Maggie, Wenjie Li", affiliation: "The Hongkong Polytechnic University", email: "wenjie.li@polyu.edu.hk" },
-                ]
-            },
-            {
-                title: "Website & App Chairs",
-                members: [
-                    { image: "assets/IMG_20211125_235249_961_mdzq7a.jpg", name: "Raj Saroj", affiliation: "IIT Bombay", email: "raj.saroj@iitb.ac.in" },
-                    { image: "assets/qrpe1dy8jv1ftm7fpo4n.png", name: "Roy Ka-Wei Lee", affiliation: "Singapore University of Technology and Design", email: "roy_lee@sutd.edu.sg" }
-                ]
-            }
-
-        ];
-
-        const sectionsContainer = document.getElementById('committee-sections');
-
-        function createSection(data) {
-            const section = document.createElement('div');
-            section.className = 'bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300';
-            section.innerHTML = `
-        <h3 class="text-xl font-bold text-[#1a3c5a] mb-4">${data.title}</h3>
-        <ul class="space-y-6">
-            ${data.members.map(member => `
-                <li class="flex items-start space-x-3">
-                    <div class="w-18 h-18 md:w-24 md:h-24 rounded-full overflow-hidden bg-neutral-200 flex-shrink-0 flex items-center justify-center">
-                        <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 min-w-0 flex flex-col justify-center">
-                        <h4 class="font-medium text-[#1a3c5a] text-base">${member.name}</h4>
-                        <p class="text-sm text-gray-600 break-words">${member.affiliation}</p>
-                        <a href="mailto:${member.email}" class="text-sm text-blue-600 hover:underline break-all">${member.email}</a>
-                    </div>
-                </li>
-            `).join('')}
-        </ul>
-    `;
-            return section;
-        }
-
-        // Populate sections
-        committeeData.forEach(data => {
-            const sectionElement = createSection(data);
-            sectionsContainer.appendChild(sectionElement);
-        });
-    </script>
-</element>
-<element id="39ef001a-1de0-4344-800d-5d89a49d9fbb" data-section-id="39ef001a-1de0-4344-800d-5d89a49d9fbb">
-
-    <div id="root">
-        <section id="registration" class="py-24 bg-neutral-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                        Registration
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-400">
-                        Join us at IJCNLP-AACL 2025
-                    </p>
-                    <!-- Countdown Timer -->
-                    <div class="mt-8 flex justify-center gap-4" id="countdown">
-                        <div class="bg-neutral-800 px-6 py-3 rounded-lg">
-                            <span class="text-2xl font-bold text-white" id="days">00</span>
-                            <span class="text-sm text-neutral-400 block">Days</span>
-                        </div>
-                        <div class="bg-neutral-800 px-6 py-3 rounded-lg">
-                            <span class="text-2xl font-bold text-white" id="hours">00</span>
-                            <span class="text-sm text-neutral-400 block">Hours</span>
-                        </div>
-                        <div class="bg-neutral-800 px-6 py-3 rounded-lg">
-                            <span class="text-2xl font-bold text-white" id="minutes">00</span>
-                            <span class="text-sm text-neutral-400 block">Minutes</span>
-                        </div>
-                        <div class="bg-neutral-800 px-6 py-3 rounded-lg">
-                            <span class="text-2xl font-bold text-white" id="seconds">00</span>
-                            <span class="text-sm text-neutral-400 block">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="grid md:grid-cols-3 gap-8 mb-12">
-          <div
-            class="bg-neutral-800 rounded-lg p-8 hover:transform hover:scale-105 transition-transform animate__animated animate__fadeIn">
-            <h3 class="text-xl font-bold text-white mb-4">Regular Registration</h3>
-            <div class="text-3xl font-bold text-blue-500 mb-6">$599</div>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Full Conference Access
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Conference Materials
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Welcome Reception
-              </li>
-            </ul>
-            <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">Register
-              Now</button>
-          </div>
-
-          <div
-            class="bg-neutral-800 rounded-lg p-8 hover:transform hover:scale-105 transition-transform animate__animated animate__fadeIn animate__delay-1s">
-            <h3 class="text-xl font-bold text-white mb-4">Student Registration</h3>
-            <div class="text-3xl font-bold text-blue-500 mb-6">$299</div>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Full Conference Access
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Conference Materials
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Student Networking Event
-              </li>
-            </ul>
-            <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">Register
-              Now</button>
-          </div>
-
-          <div
-            class="bg-neutral-800 rounded-lg p-8 hover:transform hover:scale-105 transition-transform animate__animated animate__fadeIn animate__delay-2s">
-            <h3 class="text-xl font-bold text-white mb-4">Virtual Registration</h3>
-            <div class="text-3xl font-bold text-blue-500 mb-6">$199</div>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Online Access to Sessions
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Digital Materials
-              </li>
-              <li class="flex items-center text-neutral-300">
-                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                Virtual Networking
-              </li>
-            </ul>
-            <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">Register
-              Now</button>
-          </div>
-        </div> -->
-            </div>
-        </section>
-
-        <script>
-            // Countdown Timer
-            const countdownDate = new Date('December 20, 2025 00:00:00').getTime();
-
-            const timer = setInterval(function () {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
-
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
-                document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
-
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById('countdown').innerHTML = 'Conference has started!';
-                }
-            }, 1000);
-        </script>
-    </div>
-</element>
-<element id="f841def5-3b44-4c5d-b673-90a7fd10642a" data-section-id="f841def5-3b44-4c5d-b673-90a7fd10642a">
-
-    <div id="root">
-        <section id="sponsors" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate__animated animate__fadeIn">
-                    <h2 class="text-3xl font-extrabold text-[#1a3c5a] sm:text-4xl">
-                        Our Sponsors
-                    </h2>
-                    <p class="mt-4 text-xl text-neutral-600">
-                        Supporting Excellence in Natural Language Processing Research
-                    </p>
-                </div>
-
-                <!-- Platinum Sponsors -->
-                <div class="mb-16 animate__animated animate__fadeIn">
-                    <h3 class="text-2xl font-bold text-center text-[#1a3c5a] mb-8">Platinum Sponsors</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-                            <div class="w-48 h-48 mx-auto bg-neutral-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-24 h-24 text-neutral-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-                            <div class="w-48 h-48 mx-auto bg-neutral-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-24 h-24 text-neutral-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-                            <div class="w-48 h-48 mx-auto bg-neutral-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-24 h-24 text-neutral-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gold Sponsors -->
-                <div class="mb-16 animate__animated animate__fadeIn animate__delay-1s">
-                    <h3 class="text-2xl font-bold text-center text-[#1a3c5a] mb-8">Gold Sponsors</h3>
-                    <div class="grid md:grid-cols-4 gap-6">
-                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-                            <div class="w-32 h-32 mx-auto bg-neutral-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-16 h-16 text-neutral-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Repeat for other gold sponsors -->
-                    </div>
-                </div>
-
-                <!-- Silver Sponsors -->
-                <div class="animate__animated animate__fadeIn animate__delay-2s">
-                    <h3 class="text-2xl font-bold text-center text-[#1a3c5a] mb-8">Silver Sponsors</h3>
-                    <div class="grid md:grid-cols-5 gap-4">
-                        <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-center">
-                            <div class="w-24 h-24 mx-auto bg-neutral-100 rounded-lg flex items-center justify-center">
-                                <svg class="w-12 h-12 text-neutral-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                    </path>
-                                </svg>
-                            </div>
-                        </div>
-                        <!-- Repeat for other silver sponsors -->
-                    </div>
-                </div>
-
-                <div class="mt-16 text-center">
-                    <h3 class="text-xl font-bold text-[#1a3c5a] mb-4">Become a Sponsor</h3>
-                    <p class="text-neutral-600 max-w-2xl mx-auto mb-8">
-                        Join our distinguished group of sponsors and support the advancement of NLP research and
-                        applications.
-                    </p>
-                    <a href="#"
-                        class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#1a3c5a] hover:bg-blue-700 transition-colors">
-                        Download Sponsorship Prospectus
-                        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</element>
-<element id="fcf42bf3-3d78-4efc-9ac8-6d322bf6e054" data-section-id="fcf42bf3-3d78-4efc-9ac8-6d322bf6e054">
-
-    <div id="root">
-        <footer id="footer" class="bg-neutral-900 pt-16 pb-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <!-- Conference Info -->
-                    <div>
-                        <h3 class="text-white text-lg font-bold mb-4">IJCNLP-AACL 2025</h3>
-                        <p class="text-neutral-400 mb-4">December 20-24, 2025<br />Mumbai, India</p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Contact -->
-                    <div>
-                        <h3 class="text-white text-lg font-bold mb-4">Contact Us</h3>
-                        <ul class="space-y-2 text-neutral-400">
-                            <li class="flex items-center">
-                                <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <a href="mailto:contact@ijcnlp-aacl2025.org"
-                                    class="hover:text-white transition-colors">contact@ijcnlp-aacl2025.org</a>
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                <span>IIT Mumbai, India</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="border-t border-neutral-800 pt-8">
-                    <p class="text-center text-neutral-400">
-                        © 2025 IJCNLP-AACL. All rights reserved.
-                    </p>
+                    class="mt-12 pt-12 border-t border-gray-800 text-center text-gray-400"
+                >
+                    <p>&copy; 2025 IJCNLP. All rights reserved.</p>
                 </div>
             </div>
         </footer>
-    </div>
-</element>
-<div id="page_complete">
-    <script>
-        console.log('Page complete');
-    </script>
+        <div
+            class="fixed bottom-4 right-4 transform translate-y-[200%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-300"
+            id="toast"
+        >
+            <p class="text-gray-800"></p>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            let isMenuOpen = false;
+            mobileMenuBtn.addEventListener("click", () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.style.transform = isMenuOpen
+                    ? "translateY(0)"
+                    : "translateY(-100%)";
+                mobileMenuBtn.innerHTML = isMenuOpen
+                    ? '<i class="ri-close-line text-2xl"></i>'
+                    : '<i class="ri-menu-line text-2xl"></i>';
+            });
+        </script>
     </body>
-
-    </html>
+</html>
