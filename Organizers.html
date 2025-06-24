@@ -53,6 +53,11 @@
                 font-family: "Inter", sans-serif;
             }
         </style>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body class="bg-white">
         <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
@@ -231,546 +236,193 @@
             </div>
         </div>
         <main class="pt-20">
-            <section id="organizers" class="py-20 bg-gray-50">
+            <!-- Hero Section -->
+            <section
+                class="bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white"
+            >
+                <div class="container mx-auto px-6 py-16 lg:py-24">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-6">
+                            <span
+                                class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4"
+                            >
+                                <i class="fas fa-users mr-2"></i>
+                                Meet the Team
+                            </span>
+                        </div>
+                        <h1
+                            class="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+                        >
+                            Conference Organizers
+                        </h1>
+                        <p
+                            class="text-xl lg:text-2xl mb-8 text-blue-100 font-light leading-relaxed"
+                        >
+                            Meet our dedicated team of chairs and organizers who
+                            make IJCNLP-AACL 2025 possible
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- General Chair -->
+            <section class="py-16 bg-white">
                 <div class="container mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-12">
-                        Conference Organizers
-                    </h2>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                General Chairs
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/a679740c380795d215dad2e86ff5cb8d.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Kentaro Inui"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Kentaro Inui
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                MBZUAI
-                                            </p>
-                                            <a
-                                                href="mailto:kentaro.inui@mbzuai.ac.ae"
-                                                class="text-primary text-sm hover:underline"
-                                                >kentaro.inui@mbzuai.ac.ae</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/13f3b77659c1e2537e66d6412a54eee8.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Jing-Shin Chang"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Jing-Shin Chang
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                National Chi Nan University
-                                            </p>
-                                            <a
-                                                href="mailto:jshin@ncnu.edu.tw"
-                                                class="text-primary text-sm hover:underline"
-                                                >jshin@ncnu.edu.tw</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="max-w-4xl mx-auto">
+                        <h2
+                            class="text-3xl font-bold text-center mb-12 text-slate-900"
+                        >
+                            General Chair
+                        </h2>
+                        <div
+                            class="flex justify-center"
+                            id="general-chair-container"
+                        >
+                            <!-- General chair will be populated by jQuery -->
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Program Committee Chairs
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/45893835cbd0c00d9342a4ea23a8e82f.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Sakriani Sakti"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Sakriani Sakti
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                NAIST
-                                            </p>
-                                            <a
-                                                href="mailto:ssakti@is.naist.jp"
-                                                class="text-primary text-sm hover:underline"
-                                                >ssakti@is.naist.jp</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/624894ae76b772a4d1966eb1555e1b02.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Haofen Wang"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Haofen Wang
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Tongji University
-                                            </p>
-                                            <a
-                                                href="mailto:haofen.wang@tongji.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >haofen.wang@tongji.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/ccebde87a91c964d7661c4ee6575ad73.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Derek F. Wong"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Derek F. Wong
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                University of Macau
-                                            </p>
-                                            <a
-                                                href="mailto:derekfw@um.edu.mo"
-                                                class="text-primary text-sm hover:underline"
-                                                >derekfw@um.edu.mo</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Program Chairs -->
+            <section class="py-16 bg-gradient-to-b from-slate-50 to-white">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2
+                            class="text-3xl font-bold text-center mb-12 text-slate-900"
+                        >
+                            Program Chairs
+                        </h2>
+                        <div
+                            class="grid md:grid-cols-3 gap-8"
+                            id="program-chairs-container"
+                        >
+                            <!-- Program chairs will be populated by jQuery -->
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Local Organizing Committee
-                            </h3>
-                            <div class="space-y-4">
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/22375aae8c1d2ec645433089a3566dee.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Prof. Pushpak Bhattacharya"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Prof. Pushpak Bhattacharya
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                IIT Bombay
-                                            </p>
-                                            <a
-                                                href="mailto:pb@cse.iitb.ac.in"
-                                                class="text-primary text-sm hover:underline"
-                                                >pb@cse.iitb.ac.in</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/69cb5f8e441a61c62e58c633d2f12419.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Asif Ekbal"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Asif Ekbal
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                IIT Jodhpur
-                                            </p>
-                                            <a
-                                                href="mailto:asif.ekbal@gmail.com"
-                                                class="text-primary text-sm hover:underline"
-                                                >asif.ekbal@gmail.com</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Local Organizing Chairs -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2
+                            class="text-3xl font-bold text-center mb-12 text-slate-900"
+                        >
+                            Local Organizing Chairs
+                        </h2>
+                        <div
+                            class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+                            id="local-chairs-container"
+                        >
+                            <!-- Local chairs will be populated by jQuery -->
                         </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Area Chairs
-                            </h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Committee Chairs -->
+            <section class="py-16 bg-gradient-to-b from-slate-50 to-gray-100">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-7xl mx-auto">
+                        <h2
+                            class="text-3xl font-bold text-center mb-16 text-slate-900"
+                        >
+                            Committee Chairs
+                        </h2>
+                        <div
+                            class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8"
+                            id="committee-chairs-container"
+                        >
+                            <!-- Committee chairs will be populated by jQuery -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section
+                class="py-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
+            >
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                            Get in Touch
+                        </h2>
+                        <p class="text-xl text-blue-100 mb-8">
+                            Have questions about the conference? Our organizing
+                            committee is here to help.
+                        </p>
+
+                        <div class="grid md:grid-cols-3 gap-6">
                             <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                                class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 text-center"
                             >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/176b97fd1eb046b29dd79b59eac012d6.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Yulia Tsvetkov"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Yulia Tsvetkov
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                University of Washington
-                                            </p>
-                                            <a
-                                                href="mailto:yuliats@cs.washington.edu"
-                                                class="text-primary text-sm hover:underline"
-                                                >yuliats@cs.washington.edu</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/06efbf3ba01481c12d4bd868087dd2bb.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Wanxiang Che"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Wanxiang Che
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Harbin Institute of Technology
-                                            </p>
-                                            <a
-                                                href="mailto:car@hit.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >car@hit.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/248187b3dfca9e08f3fb062ef4511d1b.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Anders Søgaard"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Anders Søgaard
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                University of Copenhagen
-                                            </p>
-                                            <a
-                                                href="mailto:soegaard@di.ku.dk"
-                                                class="text-primary text-sm hover:underline"
-                                                >soegaard@di.ku.dk</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
+                                <i
+                                    class="fas fa-envelope text-3xl text-blue-300 mb-4"
+                                ></i>
+                                <h3 class="font-semibold mb-2">
+                                    General Inquiries
+                                </h3>
+                                <p class="text-sm text-blue-100">
+                                    Contact the general chair for overall
+                                    conference questions
+                                </p>
                             </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Workshop Chairs
-                            </h3>
+
                             <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                                class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 text-center"
                             >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/9104cf3b56729a2389e685dc47c2e4fc.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Lili Mou"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Lili Mou
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                University of Alberta
-                                            </p>
-                                            <a
-                                                href="mailto:doublepower.mou@gmail.com"
-                                                class="text-primary text-sm hover:underline"
-                                                >doublepower.mou@gmail.com</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/5bdbfa327688d38e3fc517aa59995f49.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Yuki Arase"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Yuki Arase
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Osaka University
-                                            </p>
-                                            <a
-                                                href="mailto:arase@ist.osaka-u.ac.jp"
-                                                class="text-primary text-sm hover:underline"
-                                                >arase@ist.osaka-u.ac.jp</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
+                                <i
+                                    class="fas fa-file-alt text-3xl text-green-300 mb-4"
+                                ></i>
+                                <h3 class="font-semibold mb-2">
+                                    Paper Submissions
+                                </h3>
+                                <p class="text-sm text-blue-100">
+                                    Reach out to program chairs for
+                                    submission-related queries
+                                </p>
                             </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Publication Chairs
-                            </h3>
+
                             <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                                class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 text-center"
                             >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/cbacf0900894acd63961e5f85323402d.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Yao Wan"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Yao Wan
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Huazhong University
-                                            </p>
-                                            <a
-                                                href="mailto:wanyao@hust.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >wanyao@hust.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/c9ba1333112f4be1b2542be5e622ab03.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Yanyan Zhao"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Yanyan Zhao
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Institute of Computing
-                                                Technology, CAS
-                                            </p>
-                                            <a
-                                                href="mailto:zhao@ict.ac.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >zhao@ict.ac.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
+                                <i
+                                    class="fas fa-map-marker-alt text-3xl text-purple-300 mb-4"
+                                ></i>
+                                <h3 class="font-semibold mb-2">
+                                    Local Information
+                                </h3>
+                                <p class="text-sm text-blue-100">
+                                    Contact local chairs for venue and
+                                    accommodation details
+                                </p>
                             </div>
                         </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Best Paper Award Chairs
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Notice -->
+            <section class="py-8 bg-slate-100">
+                <div class="container mx-auto px-6 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <div
+                            class="flex items-center justify-center gap-4 mb-4"
+                        >
+                            <i class="fas fa-heart text-red-500 text-xl"></i>
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                Acknowledgment
                             </h3>
-                            <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
-                            >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462411/ijcnlp-aacl/x7tr7wvixhocuddaxkrt.png"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Yufang Hou"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Yufang Hou
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                IT:U Interdisciplinary
-                                                Transformation University
-                                                Austria (Austria)
-                                            </p>
-                                            <a
-                                                href="mailto:yufang.hou@it-u.at"
-                                                class="text-primary text-sm hover:underline"
-                                                >yufang.hou@it-u.at</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462409/ijcnlp-aacl/b0msibffiz2mrdf6sskr.png"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Zhongyu Wei"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Zhongyu Wei
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Fudan University
-                                            </p>
-                                            <a
-                                                href="mailto:zywei@fudan.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >zywei@fudan.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Tutorial Chairs
-                            </h3>
-                            <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
-                            >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://res.cloudinary.com/r4idbl4c/image/upload/v1740462410/ijcnlp-aacl/tqxkt6wqo8lmyosjpqf9.png"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Benjamin Heinzerling"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Benjamin Heinzerling
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                RIKEN / Tohoku University
-                                            </p>
-                                            <a
-                                                href="mailto:benjamin.heinzerling@riken.jp"
-                                                class="text-primary text-sm hover:underline"
-                                                >benjamin.heinzerling@riken.jp</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-3">
-                            <h3 class="text-xl font-semibold text-primary mb-6">
-                                Publicity Chairs
-                            </h3>
-                            <div
-                                class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
-                            >
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/ca361263ffd7dac5352c05de9712be8c.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Jing Li"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Jing Li
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Zhejiang University
-                                            </p>
-                                            <a
-                                                href="mailto:lijing2019@zju.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >lijing2019@zju.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 shadow-sm">
-                                    <div class="flex items-start gap-4">
-                                        <img
-                                            src="https://public.readdy.ai/ai/img_res/dbc5c4245fab926feb6d0b7a3ea1e3d2.jpg"
-                                            class="w-16 h-16 rounded-full object-cover"
-                                            alt="Tao Gui"
-                                        />
-                                        <div>
-                                            <h4 class="font-semibold">
-                                                Tao Gui
-                                            </h4>
-                                            <p
-                                                class="text-gray-600 text-sm mb-2"
-                                            >
-                                                Fudan University
-                                            </p>
-                                            <a
-                                                href="mailto:tgui@fudan.edu.cn"
-                                                class="text-primary text-sm hover:underline"
-                                                >tgui@fudan.edu.cn</a
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            We extend our heartfelt gratitude to all organizers,
+                            reviewers, and volunteers who contribute their time
+                            and expertise to make IJCNLP-AACL 2025 a successful
+                            and impactful conference.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -857,6 +509,484 @@
                 mobileMenuBtn.innerHTML = isMenuOpen
                     ? '<i class="ri-close-line text-2xl"></i>'
                     : '<i class="ri-menu-line text-2xl"></i>';
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                // Data objects
+                const generalChair = {
+                    name: "Kentaro Inui",
+                    affiliation:
+                        "Mohamed bin Zayed University of Artificial Intelligence",
+                    email: "kentaro.inui@mbzuai.ac.ae",
+                    photo: "assets/organizers/odmbwa30hjiv3pxs3fvu.jpg", // placeholder for future photo URL
+                };
+
+                const programChairs = [
+                    {
+                        name: "Sakriani Sakti",
+                        affiliation: "Nara Institute of Science and Technology",
+                        email: "ssakti@is.naist.jp",
+                        photo: "assets/organizers/jjggyocntuqqqtjpzs9y.png",
+                    },
+                    {
+                        name: "Haofen Wang",
+                        affiliation: "Tongji University",
+                        email: "haofen.wang@tongji.edu.cn",
+                        photo: "assets/organizers/hofen_vrlee0.png",
+                    },
+                    {
+                        name: "Derek F. Wong",
+                        affiliation: "University of Macau",
+                        email: "derekfw@um.edu.mo",
+                        photo: "assets/organizers/ijvhqylz0uegxdwgvq3g.png",
+                    },
+                ];
+
+                const localChairs = [
+                    {
+                        name: "Prof. Pushpak Bhattacharya",
+                        affiliation: "IIT Bombay",
+                        email: "pb@cse.iitb.ac.in",
+                        photo: "assets/organizers/PushpakBhattacharyya_kemexa.png",
+                    },
+                    {
+                        name: "Asif Ekbal",
+                        affiliation: "IIT Jodhpur",
+                        email: "asif.ekbal@gmail.com",
+                        photo: "assets/organizers/zpxymgfddrwyr2avd6ud.jpg",
+                    },
+                    {
+                        name: "Tanmoy Chakraborty",
+                        affiliation: "IIT Delhi",
+                        email: "chak.tanmoy.iit@gmail.com",
+                        photo: "assets/organizers/j7end3ju7uou5741yb7k.png",
+                    },
+                    {
+                        name: "Dhirendra Pratap Singh",
+                        affiliation: "IIT Bombay",
+                        email: "dhirendra.singh@iitb.ac.in",
+                        photo: "assets/organizers/ne1sta32thalgr4yisax.jpg",
+                    },
+                ];
+
+                const committeeData = [
+                    {
+                        title: "Best Paper Award Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/x7tr7wvixhocuddaxkrt.png",
+                                name: "Yufang Hou",
+                                affiliation:
+                                    "IT:U Interdisciplinary Transformation University Austria (Austria)",
+                                email: "yufang.hou@it-u.at",
+                            },
+                            {
+                                image: "assets/organizers/b0msibffiz2mrdf6sskr.png",
+                                name: "Zhongyu Wei",
+                                affiliation: "Fudan University",
+                                email: "zywei@fudan.edu.cn",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Tutorial Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/tqxkt6wqo8lmyosjpqf9.png",
+                                name: "Benjamin Heinzerling",
+                                affiliation: "RIKEN / Tohoku University",
+                                email: "benjamin.heinzerling@riken.jp",
+                            },
+                            {
+                                image: "assets/organizers/wvxgjgozgpxkspkeukes.png",
+                                name: "Lun-Wei Ku",
+                                affiliation: "Academia Sinica",
+                                email: "lwku@iis.sinica.edu.tw",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Workshop Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/ecgakikyunhjy1phv3n4.png",
+                                name: "Lizhen Qu",
+                                affiliation: "Monash University",
+                                email: "lizhen.qu@monash.edu",
+                            },
+                            {
+                                image: "assets/organizers/fmbgn4eq0gdnnrg543ya.jpg",
+                                name: "Sowmya Vajjala",
+                                affiliation: "National Research Council Canada",
+                                email: "sowmya.vajjala@nrc-cnrc.gc.ca",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Demonstration Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/rwfub3xooin2gax2cbag.png",
+                                name: "Ayu Purwarianti",
+                                affiliation: "Bandung Institute of Technology",
+                                email: "ayu@informatika.org",
+                            },
+                            {
+                                image: "assets/organizers/k92dnlwczt9bzy4fyzmv.jpg",
+                                name: "Xuebo Liu",
+                                affiliation:
+                                    "Harbin Institute of Technology, Shenzhen",
+                                email: "liuxuebo@hit.edu.cn",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Ethics Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/buix1uhvly3hh0q1zlik.png",
+                                name: "Rifki Afina Putri",
+                                affiliation: "Universitas Gadjah Mada",
+                                email: "rifki.putri@ugm.ac.id",
+                            },
+                            {
+                                image: "assets/organizers/wfsccyuxeja6zfm2bcws.jpg",
+                                name: "Yan Teng",
+                                affiliation:
+                                    "Shanghai Artificial Intelligence Laboratory",
+                                email: "tengyan@pjlab.org.cn",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Handbook Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/b3fgsseqstimwyf8fnko.jpg",
+                                name: "Jixing Li",
+                                affiliation: "City University of Hong Kong",
+                                email: "jixingli@cityu.edu.hk",
+                            },
+                            {
+                                image: "assets/organizers/frtytkirdr8kc8dww3ne.jpg",
+                                name: "Yang Deng",
+                                affiliation: "Singapore Management University",
+                                email: "ydeng@smu.edu.sg",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Publication Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/z2da6cspg42x0acg4inf.png",
+                                name: "Adila Alfa Krisnadhi",
+                                affiliation: "University of Indonesia",
+                                email: "adila@cs.ui.ac.id",
+                            },
+                            {
+                                image: "assets/organizers/hmg78aexycrvjuivbi25.jpg",
+                                name: "Amelia Jing Li",
+                                affiliation: "Hong Kong Polytechnic University",
+                                email: "jing-amelia.li@polyu.edu.hk",
+                            },
+                            {
+                                image: "assets/organizers/wmn3eswinddj9ogtqjzl.png",
+                                name: "Qin Chen",
+                                affiliation: "East China Normal University",
+                                email: "qchen@cs.ecnu.edu.cn",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Finance Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/mkcrdzzr9hl0phst2z2d.jpg",
+                                name: "Biplab Banerjee",
+                                affiliation: "IIT Bombay",
+                                email: "bbanerjee@iitb.ac.in",
+                            },
+                            {
+                                image: "assets/organizers/uaj0ot0ke1llv6sgbkvm.png",
+                                name: "Dipti Misra Sharma",
+                                affiliation: "IIIT Hyderabad",
+                                email: "dipti@iiit.ac.in",
+                            },
+                            {
+                                image: "assets/organizers/pwmkovd6ylacdnxlj1cf.png",
+                                name: "Piyush Pandey",
+                                affiliation: "IIT Bombay",
+                                email: "piyush.pandey@iitb.ac.in",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Diversity & Inclusion Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/wg1faxrjslnkwpohditc.png",
+                                name: "Sriparna Saha",
+                                affiliation: "IIT Patna",
+                                email: "sriparna@iitp.ac.in",
+                            },
+                            {
+                                image: "assets/organizers/a5zok7bkjbo60o0dnlit.png",
+                                name: "Sudeshna Sarkar",
+                                affiliation: "IIT Kharagpur",
+                                email: "sudeshna@cse.iitkgp.ac.in",
+                            },
+                            {
+                                image: "assets/organizers/udvxnpp51vzzuhwxh53l.png",
+                                name: "Tirthankar Ghosal",
+                                affiliation: "Oak Ridge National Laboratory",
+                                email: "ghosalt@ornl.gov",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Sponsorship Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/yruponsyr7ns3yx2giap.png",
+                                name: "Aditya Joshi",
+                                affiliation:
+                                    "University of New South Wales, Sydney",
+                                email: "aditya.joshi@unsw.edu.au",
+                            },
+                            {
+                                image: "assets/organizers/xm2v3p7cntlxiqejkbgq.jpg",
+                                name: "Manmeet Singh Kapoor",
+                                affiliation:
+                                    "Technocraft Centre for Applied Artificial Intelligence, IIT Bombay",
+                                email: "manmeetsinghkapoor27@gmail.com",
+                            },
+                            {
+                                image: "assets/organizers/psjflz5pwuajfqcvwpqb.jpg",
+                                name: "Sudipta Kar",
+                                affiliation: "Oracle Health AI",
+                                email: "sudipta.kar.8080@gmail.com",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Faculty Advisors to Student Research Workshop (SRW) Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/ppbgi8caja5h9d5emhmj.png",
+                                name: "Daisuke Kawahara",
+                                affiliation: "Waseda University",
+                                email: "dkw@waseda.jp",
+                            },
+                            {
+                                image: "assets/organizers/xyfihx0al7cgia4qpmwm.jpg",
+                                name: "Xiting Wang",
+                                affiliation: "Renmin University of China",
+                                email: "xitingwang@ruc.edu.cn",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Publicity Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/c1hzf95vth7gzguzf4rj.jpg",
+                                name: "Raj Dabre",
+                                affiliation:
+                                    "NICT Japan, IIT Madras, IIT Bombay",
+                                email: "prajdabre@gmail.com",
+                            },
+                            {
+                                image: "assets/organizers/unscw2n9y1qlpfdwbgfd.png",
+                                name: "Wenjie Wang",
+                                affiliation: "National University of Singapore",
+                                email: "wenjiewang96@gmail.com",
+                            },
+                            {
+                                image: "assets/organizers/r3s9wn2ej6y8zzp5sehm.jpg",
+                                name: "Sunny Manchanda",
+                                affiliation: "DYSL-AI",
+                                email: "manchanda.sunny@gmail.com",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Registration Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/sfamqq9w9xcpm83nboxk.png",
+                                name: "Gajanan Krishna Rane",
+                                affiliation: "IIT Bombay",
+                                email: "gkrane79@gmail.com",
+                            },
+                            {
+                                image: "assets/organizers/sjcyxvgql5ndzy5zbjvj.jpg",
+                                name: "Md Shad Akhtar",
+                                affiliation: "IIIT Delhi",
+                                email: "shad.akhtar@iiitd.ac.in",
+                            },
+                        ],
+                    },
+                    {
+                        title: "AACL Liaison",
+                        members: [
+                            {
+                                image: "assets/organizers/maggie_dsbtyh.jpg",
+                                name: "Maggie, Wenjie Li",
+                                affiliation:
+                                    "The Hongkong Polytechnic University",
+                                email: "wenjie.li@polyu.edu.hk",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Website & App Chairs",
+                        members: [
+                            {
+                                image: "assets/organizers/IMG_20211125_235249_961_mdzq7a.jpg",
+                                name: "Raj Saroj",
+                                affiliation: "IIT Bombay",
+                                email: "raj.saroj@iitb.ac.in",
+                            },
+                            {
+                                image: "assets/organizers/qrpe1dy8jv1ftm7fpo4n.png",
+                                name: "Roy Ka-Wei Lee",
+                                affiliation:
+                                    "Singapore University of Technology and Design",
+                                email: "roy_lee@sutd.edu.sg",
+                            },
+                        ],
+                    },
+                ];
+
+                // Helper function to create person card
+                function createPersonCard(person, large = false) {
+                    const photoSrc = person.photo || null;
+                    const photoElement = photoSrc
+                        ? `<img src="${photoSrc}" alt="${person.name}" class="w-full h-full object-cover">`
+                        : `<i class="fas fa-user ${large ? "text-6xl" : "text-4xl"} text-blue-600"></i>`;
+
+                    return `
+                            <div class="text-center organizer-card">
+                                <div class="relative group">
+                                    <div class="${large ? "w-48 h-48" : "w-32 h-32"} mx-auto rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center mb-4 group-hover:ring-4 ring-blue-400 transition-all duration-300 shadow-lg">
+                                        ${photoElement}
+                                    </div>
+                                    <h4 class="${large ? "text-xl" : "text-base"} font-semibold text-slate-900 mb-2">
+                                        ${person.name}
+                                    </h4>
+                                    <p class="${large ? "text-base" : "text-sm"} text-slate-600 mb-2 leading-relaxed">
+                                        ${person.affiliation}
+                                    </p>
+                                    <a href="mailto:${person.email}" class="text-blue-600 hover:text-blue-800 transition-colors text-sm break-all">
+                                        ${person.email}
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                }
+
+                // Helper function to create committee card
+                function createCommitteeCard(committee, index) {
+                    const membersHtml = committee.members
+                        .map((member) => {
+                            const photoSrc = member.image || null;
+                            const photoElement = photoSrc
+                                ? `<img src="${photoSrc}" alt="${member.name}" class="w-full h-full object-cover">`
+                                : `<i class="fas fa-user text-xl text-blue-600"></i>`;
+
+                            return `
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-indigo-100 flex-shrink-0 flex items-center justify-center shadow-sm">
+                                        ${photoElement}
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-semibold text-slate-900 text-sm leading-tight mb-1">
+                                            ${member.name}
+                                        </h4>
+                                        <p class="text-xs text-slate-600 mb-2 leading-relaxed">
+                                            ${member.affiliation}
+                                        </p>
+                                        <a href="mailto:${member.email}" class="text-xs text-blue-600 hover:text-blue-800 transition-colors break-all">
+                                            ${member.email}
+                                        </a>
+                                    </div>
+                                </div>
+                            `;
+                        })
+                        .join("");
+
+                    return `
+                            <div class="organizer-card bg-white shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 rounded-lg">
+                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-t-lg p-4">
+                                    <h3 class="text-lg font-bold text-blue-900 text-center">
+                                        ${committee.title}
+                                    </h3>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-6">
+                                        ${membersHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                }
+
+                // Populate General Chair
+                $("#general-chair-container").html(
+                    createPersonCard(generalChair, true),
+                );
+
+                // Populate Program Chairs
+                programChairs.forEach((chair, index) => {
+                    const cardHtml = createPersonCard(chair);
+                    const cardElement = $(cardHtml).css(
+                        "animation-delay",
+                        `${index * 150}ms`,
+                    );
+                    $("#program-chairs-container").append(cardElement);
+                });
+
+                // Populate Local Chairs
+                localChairs.forEach((chair, index) => {
+                    const cardHtml = createPersonCard(chair);
+                    const cardElement = $(cardHtml).css(
+                        "animation-delay",
+                        `${index * 100}ms`,
+                    );
+                    $("#local-chairs-container").append(cardElement);
+                });
+
+                // Populate Committee Chairs
+                committeeData.forEach((committee, index) => {
+                    $("#committee-chairs-container").append(
+                        createCommitteeCard(committee, index),
+                    );
+                });
+
+                // Intersection Observer for scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe organizer cards after they're created
+                setTimeout(() => {
+                    const organizerCards =
+                        document.querySelectorAll(".organizer-card");
+                    organizerCards.forEach((card) => {
+                        observer.observe(card);
+                    });
+                }, 100);
             });
         </script>
     </body>
