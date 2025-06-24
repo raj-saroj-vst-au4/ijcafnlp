@@ -76,11 +76,38 @@
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Home</a
                     >
-                    <a
-                        href="Call_for_papers.html"
-                        class="text-gray-700 hover:text-primary transition-colors"
-                        >Call for Papers</a
-                    >
+                    <div class="relative group">
+                        <div
+                            class="text-gray-700 hover:text-primary transition-colors cursor-pointer px-2 py-2"
+                        >
+                            Call for Papers
+                        </div>
+                        <div
+                            class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col bg-white shadow-md mt-1 rounded z-50 min-w-[180px]"
+                        >
+                            <a
+                                href="cfp_conference.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Conference</a
+                            >
+                            <a
+                                href="cfp_workshops.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Workshops</a
+                            >
+                            <a
+                                href="cfp_tutorials.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Tutorials</a
+                            >
+                            <a
+                                href="cfp_demos.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >System Demos</a
+                            >
+                        </div>
+                    </div>
+
                     <a
                         href="Dates.html"
                         class="text-gray-700 hover:text-primary transition-colors"
@@ -92,11 +119,6 @@
                         >Organizers</a
                     >
                     <a
-                        href="Venue.html"
-                        class="text-gray-700 hover:text-primary transition-colors"
-                        >Venue</a
-                    >
-                    <a
                         href="Registrations.html"
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Registration</a
@@ -106,7 +128,11 @@
                         class="text-gray-700 hover:text-primary transition-colors"
                         >Schedule</a
                     >
-
+                    <a
+                        href="Speakers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Speakers</a
+                    >
                     <a
                         href="Venue.html"
                         class="text-gray-700 hover:text-primary transition-colors"
@@ -136,11 +162,36 @@
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Home</a
                 >
-                <a
-                    href="Call_for_papers.html"
-                    class="text-gray-700 hover:text-primary transition-colors py-2"
-                    >Call for Papers</a
-                >
+                <div x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-gray-700 hover:text-primary transition-colors py-2 w-full text-left"
+                    >
+                        Call for Papers
+                    </button>
+                    <div x-show="open" class="pl-4 flex flex-col gap-1">
+                        <a
+                            href="cfp_conference.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Conference</a
+                        >
+                        <a
+                            href="cfp_workshops.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Workshops</a
+                        >
+                        <a
+                            href="cfp_tutorials.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Tutorials</a
+                        >
+                        <a
+                            href="cfp_demos.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >System Demos</a
+                        >
+                    </div>
+                </div>
                 <a
                     href="Dates.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"
@@ -151,6 +202,7 @@
                     class="text-gray-700 hover:text-primary transition-colors py-2"
                     >Organizers</a
                 >
+
                 <a
                     href="Registrations.html"
                     class="text-gray-700 hover:text-primary transition-colors py-2"

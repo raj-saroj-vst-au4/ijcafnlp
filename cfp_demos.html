@@ -1,0 +1,1323 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            IJCNLP 2025 - International Joint Conference on Natural Language
+            Processing
+        </title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#2563eb",
+                            secondary: "#f59e0b",
+                        },
+                        borderRadius: {
+                            none: "0px",
+                            sm: "4px",
+                            DEFAULT: "8px",
+                            md: "12px",
+                            lg: "16px",
+                            xl: "20px",
+                            "2xl": "24px",
+                            "3xl": "32px",
+                            full: "9999px",
+                            button: "8px",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="icon" href="assets/logos/aacl.jpg" type="image/x-icon" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            :where([class^="ri-"])::before {
+                content: "\f3c2";
+            }
+            body {
+                font-family: "Inter", sans-serif;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body class="bg-white">
+        <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+            <nav
+                class="container mx-auto px-6 h-20 flex items-center justify-between"
+            >
+                <div class="flex items-center gap-2">
+                    <!-- replace the logo text with logo image -->
+                    <img
+                        src="assets/logos/iitb.png"
+                        alt="Logo"
+                        class="w-8 h-8"
+                    />
+                    <span class="text-lg font-semibold"
+                        >IJCNLP & AACL 2025</span
+                    >
+                </div>
+                <div class="hidden xl:flex items-center gap-6">
+                    <a
+                        href="index.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Home</a
+                    >
+                    <div class="relative group">
+                        <div
+                            class="text-gray-700 hover:text-primary transition-colors cursor-pointer px-2 py-2"
+                        >
+                            Call for Papers
+                        </div>
+                        <div
+                            class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col bg-white shadow-md mt-1 rounded z-50 min-w-[180px]"
+                        >
+                            <a
+                                href="cfp_conference.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Conference</a
+                            >
+                            <a
+                                href="cfp_workshops.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Workshops</a
+                            >
+                            <a
+                                href="cfp_tutorials.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >Tutorials</a
+                            >
+                            <a
+                                href="cfp_demos.html"
+                                class="px-4 py-2 hover:bg-gray-100"
+                                >System Demos</a
+                            >
+                        </div>
+                    </div>
+
+                    <a
+                        href="Dates.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Important Dates</a
+                    >
+                    <a
+                        href="Organizers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Organizers</a
+                    >
+                    <a
+                        href="Registrations.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Registration</a
+                    >
+                    <a
+                        href="Schedule.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Schedule</a
+                    >
+                    <a
+                        href="Speakers.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Speakers</a
+                    >
+                    <a
+                        href="Venue.html"
+                        class="text-gray-700 hover:text-primary transition-colors"
+                        >Venue</a
+                    >
+                    <!-- <button
+                        class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                    >
+                        Submit Paper
+                    </button> -->
+                </div>
+                <button
+                    class="xl:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
+                    id="mobileMenuBtn"
+                >
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </nav>
+        </header>
+        <div
+            class="z-40 fixed top-20 left-0 right-0 bg-white shadow-lg transform translate-y-[-100%] transition-transform duration-300 xl:hidden"
+            id="mobileMenu"
+        >
+            <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
+                <a
+                    href="index.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Home</a
+                >
+                <div x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-gray-700 hover:text-primary transition-colors py-2 w-full text-left"
+                    >
+                        Call for Papers
+                    </button>
+                    <div x-show="open" class="pl-4 flex flex-col gap-1">
+                        <a
+                            href="cfp_conference.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Conference</a
+                        >
+                        <a
+                            href="cfp_workshops.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Workshops</a
+                        >
+                        <a
+                            href="cfp_tutorials.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >Tutorials</a
+                        >
+                        <a
+                            href="cfp_demos.html"
+                            class="text-gray-700 hover:text-primary transition-colors py-1"
+                            >System Demos</a
+                        >
+                    </div>
+                </div>
+                <a
+                    href="Dates.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Important Dates</a
+                >
+                <a
+                    href="Organizers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Organizers</a
+                >
+
+                <a
+                    href="Registrations.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Registration</a
+                >
+                <a
+                    href="Schedule.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Schedule</a
+                >
+                <a
+                    href="Speakers.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Speakers</a
+                >
+                <a
+                    href="Venue.html"
+                    class="text-gray-700 hover:text-primary transition-colors py-2"
+                    >Venue</a
+                >
+                <!-- <button
+                    class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap cursor-pointer"
+                >
+                    Submit Paper
+                </button> -->
+            </div>
+        </div>
+        <main class="pt-20">
+            <!-- Hero Section -->
+            <section
+                class="bg-gradient-to-br from-orange-600 via-red-500 to-pink-600 text-white"
+            >
+                <div class="container mx-auto px-6 py-16 lg:py-24">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="mb-6">
+                            <span
+                                class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4"
+                            >
+                                <i class="fas fa-desktop mr-2"></i>
+                                December 20-24, 2025
+                            </span>
+                        </div>
+                        <h1
+                            class="text-4xl lg:text-6xl font-bold mb-6 leading-tight"
+                        >
+                            IJCNLP-AACL 2025
+                            <span
+                                class="block text-3xl lg:text-4xl font-light text-orange-100 mt-2"
+                            >
+                                System Demonstrations
+                            </span>
+                        </h1>
+                        <p
+                            class="text-xl lg:text-2xl mb-8 text-orange-100 font-light leading-relaxed"
+                        >
+                            Showcase innovative NLP systems, from research
+                            prototypes to production-ready solutions.
+                            Demonstrate your technological innovations to the
+                            global community.
+                        </p>
+                        <div
+                            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                        >
+                            <button
+                                class="bg-white text-orange-700 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2"
+                            >
+                                <i class="fas fa-upload"></i>
+                                Submit Demo
+                            </button>
+                            <button
+                                class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 flex items-center gap-2 bg-transparent"
+                            >
+                                <i class="fas fa-trophy"></i>
+                                Best Demo Award
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Info Bar -->
+            <section class="bg-white border-b border-slate-200">
+                <div class="container mx-auto px-6 py-4">
+                    <div
+                        class="flex flex-wrap justify-center items-center gap-8 text-sm text-slate-600"
+                    >
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-calendar-alt text-orange-700"></i>
+                            <span
+                                ><strong>Submission Due:</strong> September 15,
+                                2025</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-bell text-orange-700"></i>
+                            <span
+                                ><strong>Notification:</strong> November 10,
+                                2025</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-file-alt text-orange-700"></i>
+                            <span
+                                ><strong>Page Limit:</strong> 6 pages +
+                                appendices</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-link text-orange-700"></i>
+                            <span><strong>Demo Link:</strong> Required</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overview Section -->
+            <section id="overview" class="py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2
+                                class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+                            >
+                                Call for System Demonstrations
+                            </h2>
+                            <div
+                                class="w-24 h-1 bg-orange-700 mx-auto rounded-full"
+                            ></div>
+                        </div>
+
+                        <div
+                            class="prose prose-lg mx-auto text-gray-700 leading-relaxed"
+                        >
+                            <p class="text-xl text-center mb-8 text-slate-600">
+                                The System Demonstration Program seeks proposals
+                                for demonstrations of innovative systems ranging
+                                from early-stage research prototypes to fully
+                                developed, production-ready solutions.
+                            </p>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <div
+                                    class="bg-orange-50 border-l-4 border-orange-700 p-6 rounded-r-lg"
+                                >
+                                    <h3
+                                        class="text-lg font-semibold text-orange-700 mb-2"
+                                    >
+                                        <i class="fas fa-open-source mr-2"></i
+                                        >Open Source Priority
+                                    </h3>
+                                    <p class="text-gray-700 mb-0">
+                                        Particular emphasis is placed on systems
+                                        that are publicly accessible as
+                                        open-source or open-access solutions.
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="bg-red-50 border-l-4 border-red-700 p-6 rounded-r-lg"
+                                >
+                                    <h3
+                                        class="text-lg font-semibold text-red-700 mb-2"
+                                    >
+                                        <i class="fas fa-industry mr-2"></i
+                                        >Industrial Innovation
+                                    </h3>
+                                    <p class="text-gray-700 mb-0">
+                                        We strongly encourage showcasing
+                                        industrial systems that demonstrate
+                                        technological innovation in NLP
+                                        applications.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg mb-8"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-amber-700 mb-2"
+                                >
+                                    <i class="fas fa-trophy mr-2"></i>Best Demo
+                                    Award
+                                </h3>
+                                <p class="text-gray-700 mb-0">
+                                    IJCNLP-AACL 2025's demo track features a
+                                    Best Demo Award judged by a committee who
+                                    actually interacts with the demonstrations
+                                    during the conference.
+                                </p>
+                            </div>
+
+                            <div
+                                class="bg-blue-50 border-l-4 border-blue-700 p-6 rounded-r-lg"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-blue-700 mb-2"
+                                >
+                                    <i class="fas fa-presentation mr-2"></i>Live
+                                    Demonstration
+                                </h3>
+                                <p class="text-gray-700 mb-0">
+                                    At least one author is expected to deliver a
+                                    live demonstration during a designated demo
+                                    session, accompanied by a poster
+                                    presentation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Types -->
+            <section class="py-16 bg-slate-50">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2
+                                class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+                            >
+                                System Categories
+                            </h2>
+                            <p class="text-xl text-slate-600">
+                                We welcome demonstrations across all areas of
+                                NLP and computational linguistics
+                            </p>
+                            <div
+                                class="w-24 h-1 bg-orange-700 mx-auto rounded-full mt-4"
+                            ></div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- NLP Systems -->
+                            <div
+                                class="bg-white border-l-4 border-blue-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-blue-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-blue-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-brain mr-2 text-blue-600"
+                                        ></i>
+                                        NLP Systems
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Natural language processing systems or
+                                        system components
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Application Systems -->
+                            <div
+                                class="bg-white border-l-4 border-green-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-green-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-green-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-mobile-alt mr-2 text-green-600"
+                                        ></i>
+                                        Application Systems
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Application systems using language
+                                        technology components
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Research Tools -->
+                            <div
+                                class="bg-white border-l-4 border-purple-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-purple-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-purple-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-flask mr-2 text-purple-600"
+                                        ></i>
+                                        Research Tools
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Software tools for natural language
+                                        processing research
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Demo & Evaluation -->
+                            <div
+                                class="bg-white border-l-4 border-red-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-red-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-red-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-chart-line mr-2 text-red-600"
+                                        ></i>
+                                        Demo & Evaluation
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Software for demonstration or evaluation
+                                        purposes
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Educational Tools -->
+                            <div
+                                class="bg-white border-l-4 border-indigo-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-indigo-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-indigo-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-graduation-cap mr-2 text-indigo-600"
+                                        ></i>
+                                        Educational Tools
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Software supporting learning or
+                                        education in NLP
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Data Visualization -->
+                            <div
+                                class="bg-white border-l-4 border-pink-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-pink-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-pink-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-chart-bar mr-2 text-pink-600"
+                                        ></i>
+                                        Data Visualization
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Tools for data visualization and
+                                        annotation
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Model Inspection -->
+                            <div
+                                class="bg-white border-l-4 border-teal-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-teal-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-teal-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-search mr-2 text-teal-600"
+                                        ></i>
+                                        Model Inspection
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Tools for model inspection and analysis
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Development Tools -->
+                            <div
+                                class="bg-white border-l-4 border-orange-500 hover:shadow-md transition-shadow duration-200 rounded-lg overflow-hidden"
+                            >
+                                <div class="bg-orange-50 p-4 pb-3">
+                                    <h3
+                                        class="flex items-center text-orange-800 text-base font-semibold"
+                                    >
+                                        <i
+                                            class="fas fa-code mr-2 text-orange-600"
+                                        ></i>
+                                        Development Tools
+                                    </h3>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-sm text-gray-700">
+                                        Development tools and frameworks for NLP
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submission Requirements -->
+            <section id="requirements" class="py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2
+                                class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+                            >
+                                Submission Requirements
+                            </h2>
+                            <p class="text-xl text-slate-600">
+                                Three components required for a complete
+                                submission
+                            </p>
+                            <div
+                                class="w-24 h-1 bg-orange-700 mx-auto rounded-full mt-4"
+                            ></div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <!-- Paper Requirement -->
+                            <div
+                                class="h-full border-l-4 border-blue-500 bg-white rounded-lg shadow-sm overflow-hidden"
+                            >
+                                <div class="bg-blue-50 p-6">
+                                    <h3
+                                        class="flex items-center text-blue-800 font-semibold text-lg"
+                                    >
+                                        <i
+                                            class="fas fa-file-alt mr-3 text-blue-600"
+                                        ></i>
+                                        Research Paper
+                                    </h3>
+                                    <p class="text-blue-600 text-sm mt-1">
+                                        Up to 6 pages + 2 page appendix
+                                    </p>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <p class="text-sm text-gray-700 mb-4">
+                                            Your paper must address these key
+                                            questions:
+                                        </p>
+                                        <div class="space-y-3">
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >What problem does the
+                                                    system address?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >Why is the system important
+                                                    and impactful?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >What is novel about the
+                                                    approach/technology?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >Who is the target
+                                                    audience?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >How does the system
+                                                    work?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >How does it compare with
+                                                    existing systems?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >How is the system
+                                                    licensed?</span
+                                                >
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i
+                                                    class="fas fa-question-circle text-blue-600 mt-1 text-xs"
+                                                ></i>
+                                                <span
+                                                    class="text-sm text-gray-700"
+                                                    >How was the system
+                                                    evaluated?</span
+                                                >
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="bg-red-50 border border-red-200 rounded p-3 mt-4"
+                                        >
+                                            <p
+                                                class="text-sm text-red-700 font-medium"
+                                            >
+                                                <i
+                                                    class="fas fa-exclamation-triangle mr-1"
+                                                ></i>
+                                                Submissions without evaluation
+                                                may be desk rejected
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Requirement -->
+                            <div
+                                class="h-full border-l-4 border-green-500 bg-white rounded-lg shadow-sm overflow-hidden"
+                            >
+                                <div class="bg-green-50 p-6">
+                                    <h3
+                                        class="flex items-center text-green-800 font-semibold text-lg"
+                                    >
+                                        <i
+                                            class="fas fa-video mr-3 text-green-600"
+                                        ></i>
+                                        Demonstration Video
+                                    </h3>
+                                    <p class="text-green-600 text-sm mt-1">
+                                        Maximum 2.5 minutes screencast
+                                    </p>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-gray-900 mb-2"
+                                            >
+                                                Format Guidelines
+                                            </h4>
+                                            <ul
+                                                class="text-sm text-gray-700 space-y-2"
+                                            >
+                                                <li>
+                                                    • Screencast with audio
+                                                    narration (preferred)
+                                                </li>
+                                                <li>
+                                                    • Video showcasing user
+                                                    interaction
+                                                </li>
+                                                <li>
+                                                    • Production quality not
+                                                    required
+                                                </li>
+                                                <li>
+                                                    • Used for evaluation, not
+                                                    published
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-gray-900 mb-2"
+                                            >
+                                                Content Focus
+                                            </h4>
+                                            <ul
+                                                class="text-sm text-gray-700 space-y-2"
+                                            >
+                                                <li>
+                                                    • Demonstrate key features
+                                                </li>
+                                                <li>• Show system workflow</li>
+                                                <li>
+                                                    • Highlight unique
+                                                    capabilities
+                                                </li>
+                                                <li>
+                                                    • Include clear narration
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Demo Link Requirement -->
+                            <div
+                                class="h-full border-l-4 border-purple-500 bg-white rounded-lg shadow-sm overflow-hidden"
+                            >
+                                <div class="bg-purple-50 p-6">
+                                    <h3
+                                        class="flex items-center text-purple-800 font-semibold text-lg"
+                                    >
+                                        <i
+                                            class="fas fa-link mr-3 text-purple-600"
+                                        ></i>
+                                        Live Demo or Package
+                                    </h3>
+                                    <p class="text-purple-600 text-sm mt-1">
+                                        Strict requirement - no exceptions
+                                    </p>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <h4
+                                                class="font-semibold text-gray-900 mb-2"
+                                            >
+                                                Required Options
+                                            </h4>
+                                            <ul
+                                                class="text-sm text-gray-700 space-y-2"
+                                            >
+                                                <li>
+                                                    • Link to live demo website,
+                                                    OR
+                                                </li>
+                                                <li>
+                                                    • Link to downloadable
+                                                    installation package
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="bg-purple-50 border border-purple-200 rounded p-3"
+                                        >
+                                            <h4
+                                                class="font-semibold text-purple-800 mb-1"
+                                            >
+                                                Exceptions
+                                            </h4>
+                                            <p class="text-sm text-purple-700">
+                                                Only when special hardware is
+                                                required and clearly impossible
+                                                to share
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="bg-red-50 border border-red-200 rounded p-3"
+                                        >
+                                            <p
+                                                class="text-sm text-red-700 font-medium"
+                                            >
+                                                <i
+                                                    class="fas fa-exclamation-triangle mr-1"
+                                                ></i>
+                                                Submissions without links will
+                                                be desk rejected
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Important Dates Timeline -->
+            <section id="dates" class="py-16 bg-slate-50">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h2
+                                class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4"
+                            >
+                                Important Dates
+                            </h2>
+                            <p class="text-lg text-slate-600">
+                                All deadlines are 11:59PM UTC-12:00 ("anywhere
+                                on Earth")
+                            </p>
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mt-2"
+                            >
+                                <i class="fas fa-info-circle mr-1"></i>
+                                No rebuttal stage
+                            </span>
+                            <div
+                                class="w-24 h-1 bg-orange-700 mx-auto rounded-full mt-4"
+                            ></div>
+                        </div>
+
+                        <div class="relative">
+                            <!-- Timeline line -->
+                            <div
+                                class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-slate-300"
+                            ></div>
+
+                            <!-- Timeline items -->
+                            <div class="space-y-12">
+                                <div
+                                    class="relative flex items-center timeline-item"
+                                >
+                                    <div class="flex-1 text-right pr-8">
+                                        <div
+                                            class="bg-red-50 rounded-lg p-6 border-l-4 border-red-500"
+                                        >
+                                            <h3
+                                                class="text-lg font-semibold text-red-900 mb-2"
+                                            >
+                                                Paper Submission Deadline
+                                            </h3>
+                                            <p class="text-red-700 font-medium">
+                                                Monday, September 15, 2025
+                                            </p>
+                                            <p
+                                                class="text-sm text-red-600 mt-1"
+                                            >
+                                                Paper + Video + Demo Link
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white"
+                                    ></div>
+                                    <div class="flex-1 pl-8"></div>
+                                </div>
+
+                                <div
+                                    class="relative flex items-center timeline-item"
+                                >
+                                    <div class="flex-1 pr-8"></div>
+                                    <div
+                                        class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white"
+                                    ></div>
+                                    <div class="flex-1 text-left pl-8">
+                                        <div
+                                            class="bg-emerald-50 rounded-lg p-6 border-l-4 border-emerald-500"
+                                        >
+                                            <h3
+                                                class="text-lg font-semibold text-emerald-900 mb-2"
+                                            >
+                                                Notification of Acceptance
+                                            </h3>
+                                            <p
+                                                class="text-emerald-700 font-medium"
+                                            >
+                                                Monday, November 10, 2025
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="relative flex items-center timeline-item"
+                                >
+                                    <div class="flex-1 text-right pr-8">
+                                        <div
+                                            class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500"
+                                        >
+                                            <h3
+                                                class="text-lg font-semibold text-blue-900 mb-2"
+                                            >
+                                                Camera Ready Submission
+                                            </h3>
+                                            <p
+                                                class="text-blue-700 font-medium"
+                                            >
+                                                Monday, November 24, 2025
+                                            </p>
+                                            <p
+                                                class="text-sm text-blue-600 mt-1"
+                                            >
+                                                +1 additional page allowed
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white"
+                                    ></div>
+                                    <div class="flex-1 pl-8"></div>
+                                </div>
+
+                                <div
+                                    class="relative flex items-center timeline-item"
+                                >
+                                    <div class="flex-1 pr-8"></div>
+                                    <div
+                                        class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-orange-500 rounded-full border-4 border-white"
+                                    ></div>
+                                    <div class="flex-1 text-left pl-8">
+                                        <div
+                                            class="bg-orange-50 rounded-lg p-6 border-l-4 border-orange-500"
+                                        >
+                                            <h3
+                                                class="text-lg font-semibold text-orange-900 mb-2"
+                                            >
+                                                IJCNLP-AACL 2025 Main Conference
+                                            </h3>
+                                            <p
+                                                class="text-orange-700 font-medium"
+                                            >
+                                                December 20-24, 2025
+                                            </p>
+                                            <p
+                                                class="text-sm text-orange-600 mt-1"
+                                            >
+                                                Live demonstrations
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Conference Demo Sections</title>
+                <script src="https://cdn.tailwindcss.com"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            </head>
+            <body>
+                <!-- Review Process & Ethics -->
+                <section class="py-16 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+                    <div class="container mx-auto px-6">
+                        <div class="max-w-6xl mx-auto">
+                            <div class="text-center mb-12">
+                                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Review Process & Ethics</h2>
+                                <p class="text-xl text-red-100">
+                                    Single-blind review with strong emphasis on ethical considerations
+                                </p>
+                            </div>
+
+                            <div class="grid lg:grid-cols-2 gap-8">
+                                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg">
+                                    <div class="p-6 pb-0">
+                                        <h3 class="text-white flex items-center text-xl font-semibold">
+                                            <i class="fas fa-eye mr-3 text-yellow-300"></i>
+                                            Review Policy
+                                        </h3>
+                                    </div>
+                                    <div class="p-6 text-red-100">
+                                        <div class="space-y-3">
+                                            <div class="flex items-center gap-2">
+                                                <i class="fas fa-user-check text-yellow-300"></i>
+                                                <span>Single-blind reviewing process</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <i class="fas fa-id-card text-yellow-300"></i>
+                                                <span>Authors do not need to conceal identity</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <i class="fas fa-signature text-yellow-300"></i>
+                                                <span>Include authors' names and affiliations</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <i class="fas fa-quote-left text-yellow-300"></i>
+                                                <span>Self-references are allowed</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <i class="fas fa-ban text-yellow-300"></i>
+                                                <span>No rebuttal stage this year</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg">
+                                    <div class="p-6 pb-0">
+                                        <h3 class="text-white flex items-center text-xl font-semibold">
+                                            <i class="fas fa-shield-alt mr-3 text-green-300"></i>
+                                            Ethics Policy
+                                        </h3>
+                                    </div>
+                                    <div class="p-6 text-red-100">
+                                        <div class="space-y-3">
+                                            <div class="flex items-start gap-2">
+                                                <i class="fas fa-gavel text-green-300 mt-1"></i>
+                                                <span>Must honor ACM Code of Ethics</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i class="fas fa-exclamation-triangle text-green-300 mt-1"></i>
+                                                <span>Papers can be rejected on ethical grounds</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i class="fas fa-plus text-green-300 mt-1"></i>
+                                                <span>Extra space allowed for broader impact statement</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i class="fas fa-database text-green-300 mt-1"></i>
+                                                <span>Sensitive data work must discuss ethical issues</span>
+                                            </div>
+                                            <div class="flex items-start gap-2">
+                                                <i class="fas fa-users text-green-300 mt-1"></i>
+                                                <span>Ethics committee reviews flagged papers</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Submission Platform -->
+                <section class="py-16 bg-white">
+                    <div class="container mx-auto px-6">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Submission Platform</h2>
+
+                            <div class="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg mb-8">
+                                <div class="p-8">
+                                    <div class="flex items-center justify-center mb-4">
+                                        <i class="fas fa-upload text-3xl text-orange-600 mr-3"></i>
+                                        <h3 class="text-2xl font-bold text-orange-800">Submit Your Demonstration</h3>
+                                    </div>
+                                    <p class="text-orange-700 mb-6 max-w-2xl mx-auto">
+                                        Paper submission is electronic using the OpenReview conference management system.
+                                        Ensure all three components are included: paper, video, and demo link.
+                                    </p>
+                                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                        <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                                            <i class="fas fa-external-link-alt mr-2"></i>
+                                            Submit via OpenReview
+                                        </button>
+                                        <button class="border border-orange-600 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-medium transition-colors">
+                                            <i class="fas fa-file-download mr-2"></i>
+                                            Download Style Guide
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+                                <h3 class="text-lg font-semibold text-amber-700 mb-2">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>Important Notes
+                                </h3>
+                                <div class="text-amber-700 space-y-1">
+                                    <p>• Papers not following style guidelines will be desk rejected</p>
+                                    <p>• Original, unpublished work only - publication will be archival</p>
+                                    <p>• Multiple submission policy follows main conference CFP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Demo Chairs & Contact -->
+                <section class="py-16 bg-slate-50">
+                    <div class="container mx-auto px-6">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">Demonstration Co-chairs</h2>
+
+                            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                                <div class="bg-white rounded-lg shadow-sm text-center">
+                                    <div class="p-8">
+                                        <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-user text-2xl text-orange-600"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Ayu Purwarianti</h3>
+                                        <p class="text-gray-600">Bandung Institute of Technology, Indonesia</p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-lg shadow-sm text-center">
+                                    <div class="p-8">
+                                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-user text-2xl text-red-600"></i>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Xuebo Liu</h3>
+                                        <p class="text-gray-600">Harbin Institute of Technology, Shenzhen</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-lg p-8 shadow-sm">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                                    <i class="fas fa-envelope mr-2 text-orange-600"></i>
+                                    Contact Information
+                                </h3>
+                                <p class="text-gray-700 mb-4">
+                                    For questions about system demonstrations, submission guidelines, and demo requirements.
+                                </p>
+                                <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Contact Demo Chairs
+                                </button>
+                                <p class="text-sm text-gray-500 mt-3">
+                                    ijcnlp-aacl2025-demo-track@googlegroups.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </main>
+        <footer class="bg-gray-900 text-white py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <img
+                                src="assets/logos/iitb.png"
+                                alt="Logo"
+                                class="w-8 h-8"
+                            />
+                            <span class="text-lg font-semibold"
+                                >IJCNLP & AACL 2025</span
+                            >
+                        </div>
+                        <p class="text-gray-400">
+                            14th International Joint Conference on Natural
+                            Language Processing & 4th Asia-Pacific Chapter of
+                            the Association for Computational Linguistics
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <i class="ri-mail-line"></i>
+                                <a
+                                    href="mailto:contact@ijcnlp-aacl2025.org"
+                                    class="text-gray-400 hover:text-white transition-colors"
+                                    >contact@ijcnlp-aacl2025.org</a
+                                >
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="ri-map-pin-2-line"></i>
+                                <span class="text-gray-400"
+                                    >IIT Bombay, Mumbai, India</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                        <div class="flex gap-4">
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-twitter-x-line"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                            >
+                                <i class="ri-linkedin-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 pt-12 border-t border-gray-800 text-center text-gray-400"
+                >
+                    <p>&copy; 2025 IJCNLP. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <div
+            class="fixed bottom-4 right-4 transform translate-y-[200%] bg-white rounded-lg shadow-lg p-4 transition-transform duration-300"
+            id="toast"
+        >
+            <p class="text-gray-800"></p>
+        </div>
+        <script>
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+            let isMenuOpen = false;
+            mobileMenuBtn.addEventListener("click", () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.style.transform = isMenuOpen
+                    ? "translateY(0)"
+                    : "translateY(-100%)";
+                mobileMenuBtn.innerHTML = isMenuOpen
+                    ? '<i class="ri-close-line text-2xl"></i>'
+                    : '<i class="ri-menu-line text-2xl"></i>';
+            });
+        </script>
+    </body>
+</html>
